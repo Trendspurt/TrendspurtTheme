@@ -2,48 +2,67 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import GetAppIcon from '@material-ui/icons/GetApp';
 
-var version = "1.0.7";
+var version = "1.1.0";
 
-var Version = (() => {
+var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
 });
 
-class Headline extends React.Component {
-  constructor(props) {
-    super(props);
-    this.tag = props.tag ? props.tag : 'h2';
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+var _default = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(_default, _React$Component);
+
+  function _default(props) {
+    var _this;
+
+    _this = _React$Component.call(this, props) || this;
+    _this.tag = props.tag ? props.tag : 'h2';
+    return _this;
   }
 
-  render() {
+  var _proto = _default.prototype;
+
+  _proto.render = function render() {
     return /*#__PURE__*/React.createElement("section", {
       className: "ts-Headline"
     }, /*#__PURE__*/React.createElement(this.tag, null, this.props.children));
-  }
+  };
 
-}
+  return _default;
+}(React.Component);
 
-var Text = (props => {
+var Text = (function (props) {
   return /*#__PURE__*/React.createElement("div", null, props.children);
 });
 
-class Image extends React.Component {
-  constructor(props) {
-    super(props);
+var _default$1 = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(_default, _React$Component);
+
+  function _default(props) {
+    return _React$Component.call(this, props) || this;
   }
 
-  render() {
+  var _proto = _default.prototype;
+
+  _proto.render = function render() {
     return /*#__PURE__*/React.createElement("figure", {
       className: "ts-Image"
     }, /*#__PURE__*/React.createElement("img", {
       src: this.props.src
     }), /*#__PURE__*/React.createElement("figcaption", null, this.props.children), this.props.source && /*#__PURE__*/React.createElement("figcaption", {
-      class: "source"
+      "class": "source"
     }, "(source: ", this.props.source, ")"));
-  }
+  };
 
-}
+  return _default;
+}(React.Component);
 
-var CTA = (props => {
+var CTA = (function (props) {
   return /*#__PURE__*/React.createElement("div", null, props.children);
 });
 
@@ -87,5 +106,5 @@ function YouTube(props) {
   }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
 }
 
-export { CTA, Download, Headline, Image, Text, Version, Video, YouTube };
+export { CTA, Download, _default as Headline, _default$1 as Image, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map

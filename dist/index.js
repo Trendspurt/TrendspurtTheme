@@ -4,7 +4,7 @@ var React = _interopDefault(require('react'));
 var Button = _interopDefault(require('@material-ui/core/Button'));
 var GetAppIcon = _interopDefault(require('@material-ui/icons/GetApp'));
 
-var version = "1.0.7";
+var version = "1.1.0";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
