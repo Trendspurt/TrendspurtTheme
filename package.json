@@ -1,12 +1,12 @@
 {
-  "name": "trendspurt-theme",
-  "version": "1.0.0",
+  "name": "@trendspurt/trendspurt-theme",
+  "version": "1.0.7",
   "description": "Made with create-react-library",
   "author": "simonwidjaja",
-  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
+  "repository": "git://github.com/Trendspurt/TrendspurtTheme",
   "engines": {
     "node": ">=10"
   },
@@ -48,5 +48,10 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@material-ui/core": "^4.10.1",
+    "@material-ui/icons": "^4.9.1",
+    "node-sass": "^4.14.1"
+  }
 }

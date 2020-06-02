@@ -1,7 +1,8 @@
-import React from 'react'
-import styles from './styles.module.css'
-export {default as TextBasic} from './components/TextBasic'
-
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export {default as Version} from './components/Version'
+export {default as Headline} from './components/Headline'
+export {default as Text} from './components/Text'
+export {default as Image} from './components/Image'
+export {default as CTA} from './components/CTA'
+export {default as Download} from './components/Download'
+export {default as Video} from './components/Video'
+export {default as YouTube} from './components/YouTube'
