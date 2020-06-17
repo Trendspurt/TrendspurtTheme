@@ -4,7 +4,7 @@ var React = _interopDefault(require('react'));
 var Button = _interopDefault(require('@material-ui/core/Button'));
 var GetAppIcon = _interopDefault(require('@material-ui/icons/GetApp'));
 
-var version = "1.2.45";
+var version = "1.2.46";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -112,7 +112,8 @@ function IFrame(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "ts-IFrame",
     style: Object.assign({
-      height: props.height
+      height: props.height,
+      boxSizing: 'content-box'
     }, props.style)
   }, /*#__PURE__*/React.createElement("iframe", {
     width: "100%",

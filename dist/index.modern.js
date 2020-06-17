@@ -2,67 +2,48 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import GetAppIcon from '@material-ui/icons/GetApp';
 
-var version = "1.2.45";
+var version = "1.2.46";
 
-var Version = (function () {
+var Version = (() => {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
 });
 
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-var _default = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.tag = props.tag ? props.tag : 'h2';
-    return _this;
+class Headline extends React.Component {
+  constructor(props) {
+    super(props);
+    this.tag = props.tag ? props.tag : 'h2';
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("section", {
       className: "ts-Headline"
     }, /*#__PURE__*/React.createElement(this.tag, null, this.props.children));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var Text = (function (props) {
+var Text = (props => {
   return /*#__PURE__*/React.createElement("div", null, props.children);
 });
 
-var _default$1 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    return _React$Component.call(this, props) || this;
+class Image extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("figure", {
       className: "ts-Image"
     }, /*#__PURE__*/React.createElement("img", {
       src: this.props.src
     }), /*#__PURE__*/React.createElement("figcaption", null, this.props.children), this.props.source && /*#__PURE__*/React.createElement("figcaption", {
-      "class": "source"
+      class: "source"
     }, "(source: ", this.props.source, ")"));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var CTA = (function (props) {
+var CTA = (props => {
   return /*#__PURE__*/React.createElement("div", null, props.children);
 });
 
@@ -110,7 +91,8 @@ function IFrame(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "ts-IFrame",
     style: Object.assign({
-      height: props.height
+      height: props.height,
+      boxSizing: 'content-box'
     }, props.style)
   }, /*#__PURE__*/React.createElement("iframe", {
     width: "100%",
@@ -120,5 +102,5 @@ function IFrame(props) {
   }), /*#__PURE__*/React.createElement("p", null, props.title));
 }
 
-export { CTA, Download, _default as Headline, IFrame, _default$1 as Image, Text, Version, Video, YouTube };
+export { CTA, Download, Headline, IFrame, Image, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map
