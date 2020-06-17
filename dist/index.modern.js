@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import GetAppIcon from '@material-ui/icons/GetApp';
 
-var version = "1.2.48";
+var version = "1.2.49";
 
 var Version = (() => {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -37,7 +37,7 @@ class Image extends React.Component {
     }, /*#__PURE__*/React.createElement("img", {
       src: this.props.src
     }), /*#__PURE__*/React.createElement("figcaption", null, this.props.children), this.props.source && /*#__PURE__*/React.createElement("figcaption", {
-      class: "source"
+      className: "source"
     }, "(source: ", this.props.source, ")"));
   }
 
@@ -103,7 +103,7 @@ function IFrame(props) {
       boxShadow: `${props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0'}`
     }
   }), /*#__PURE__*/React.createElement("p", {
-    class: "caption"
+    className: "caption"
   }, props.title));
 }
 

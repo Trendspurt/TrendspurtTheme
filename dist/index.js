@@ -4,7 +4,7 @@ var React = _interopDefault(require('react'));
 var Button = _interopDefault(require('@material-ui/core/Button'));
 var GetAppIcon = _interopDefault(require('@material-ui/icons/GetApp'));
 
-var version = "1.2.48";
+var version = "1.2.49";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -57,7 +57,7 @@ var _default$1 = /*#__PURE__*/function (_React$Component) {
     }, /*#__PURE__*/React.createElement("img", {
       src: this.props.src
     }), /*#__PURE__*/React.createElement("figcaption", null, this.props.children), this.props.source && /*#__PURE__*/React.createElement("figcaption", {
-      "class": "source"
+      className: "source"
     }, "(source: ", this.props.source, ")"));
   };
 
@@ -124,7 +124,7 @@ function IFrame(props) {
       boxShadow: "" + (props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0')
     }
   }), /*#__PURE__*/React.createElement("p", {
-    "class": "caption"
+    className: "caption"
   }, props.title));
 }
 

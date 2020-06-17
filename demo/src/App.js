@@ -48,7 +48,7 @@ const App = () => {
       <CTA>A simple call to action</CTA>
 
       <h3>Code</h3>
-      <Code>
+      <Code> 
         {`
 <div>
   
