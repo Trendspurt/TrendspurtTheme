@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import GetAppIcon from '@material-ui/icons/GetApp';
 
-var version = "1.2.47";
+var version = "1.2.48";
 
 var Version = (() => {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -107,5 +107,33 @@ function IFrame(props) {
   }, props.title));
 }
 
-export { CTA, Download, Headline, IFrame, Image, Text, Version, Video, YouTube };
+function Code(props) {
+  function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function format(input) {
+    let output = htmlEntities(input).replace(/##/g, '<strong>').replace(/#\/#/g, '</strong>');
+    return output;
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ts-Code",
+    style: Object.assign({}, props.style)
+  }, /*#__PURE__*/React.createElement("pre", {
+    style: {
+      fontSize: '.9rem',
+      padding: '20px',
+      backgroundColor: '#F6F6F6',
+      border: '1px solid #EEE',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement("code", {
+    dangerouslySetInnerHTML: {
+      __html: format(props.children)
+    }
+  })));
+}
+
+export { CTA, Code, Download, Headline, IFrame, Image, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map

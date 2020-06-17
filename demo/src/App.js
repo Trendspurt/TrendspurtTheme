@@ -10,6 +10,7 @@ import {
   Video, 
   CTA, 
   IFrame, 
+  Code, 
 } from 'trendspurt-theme'
 // import 'trendspurt-theme/dist/index.css'
 
@@ -46,10 +47,28 @@ const App = () => {
       <h3>CTA (WIP)</h3>
       <CTA>A simple call to action</CTA>
 
+      <h3>Code</h3>
+      <Code>
+        {`
+<div>
+  
+  <div style="width: 200px; height: 200px; left: 50px; top: 50px; background-color: green;"
+      ##mojo-fx-magnet#/#></div>
+
+  <div id="blue" style="width: 200px; height: 200px; left: 300px; top: 50px; background-color: blue;">sadsajdjaskhd jashdkjhaks jhdkasjhdkash</div>
+
+  <div id="gold" style="width: 200px; height: 200px; left: 550px; top: 50px; background-color: gold;"></div>
+
+</div>
+        `}
+      </Code>
+
       <h3>IFrame</h3>
       <IFrame title="Iframe in action" src="http://www.trendspurt.com"
               height="600px"
               style={{}}></IFrame>
+
+
 
       <br/><br/><br/>
 
