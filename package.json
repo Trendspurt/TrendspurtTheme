@@ -1,6 +1,6 @@
 {
   "name": "@trendspurt/trendspurt-theme",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Made with create-react-library",
   "author": "simonwidjaja",
   "main": "dist/index.js",
@@ -11,6 +11,8 @@
     "node": ">=10"
   },
   "scripts": {
+    "publish": "npm publish",
+    "--- Legacy ---": "--------",
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",

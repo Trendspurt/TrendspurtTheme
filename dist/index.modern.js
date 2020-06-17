@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import GetAppIcon from '@material-ui/icons/GetApp';
 
-var version = "1.1.0";
+var version = "1.1.1";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -106,5 +106,19 @@ function YouTube(props) {
   }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
 }
 
-export { CTA, Download, _default as Headline, _default$1 as Image, Text, Version, Video, YouTube };
+function IFrame(props) {
+  return /*#__PURE__*/React.createElement("figure", {
+    className: "ts-IFrame",
+    style: {
+      height: props.height
+    }
+  }, /*#__PURE__*/React.createElement("iframe", {
+    width: "100%",
+    height: "100%",
+    src: props.src,
+    frameBorder: "0"
+  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
+}
+
+export { CTA, Download, _default as Headline, IFrame, _default$1 as Image, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map

@@ -4,7 +4,7 @@ var React = _interopDefault(require('react'));
 var Button = _interopDefault(require('@material-ui/core/Button'));
 var GetAppIcon = _interopDefault(require('@material-ui/icons/GetApp'));
 
-var version = "1.1.0";
+var version = "1.1.1";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -108,9 +108,24 @@ function YouTube(props) {
   }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
 }
 
+function IFrame(props) {
+  return /*#__PURE__*/React.createElement("figure", {
+    className: "ts-IFrame",
+    style: {
+      height: props.height
+    }
+  }, /*#__PURE__*/React.createElement("iframe", {
+    width: "100%",
+    height: "100%",
+    src: props.src,
+    frameBorder: "0"
+  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
+}
+
 exports.CTA = CTA;
 exports.Download = Download;
 exports.Headline = _default;
+exports.IFrame = IFrame;
 exports.Image = _default$1;
 exports.Text = Text;
 exports.Version = Version;
