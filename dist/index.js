@@ -4,7 +4,7 @@ var React = _interopDefault(require('react'));
 var Button = _interopDefault(require('@material-ui/core/Button'));
 var GetAppIcon = _interopDefault(require('@material-ui/icons/GetApp'));
 
-var version = "1.2.46";
+var version = "1.2.47";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -111,16 +111,21 @@ function YouTube(props) {
 function IFrame(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "ts-IFrame",
-    style: Object.assign({
-      height: props.height,
-      boxSizing: 'content-box'
-    }, props.style)
+    style: Object.assign({}, props.style)
   }, /*#__PURE__*/React.createElement("iframe", {
     width: "100%",
     height: "100%",
     src: props.src,
-    frameBorder: "0"
-  }), /*#__PURE__*/React.createElement("p", null, props.title));
+    frameBorder: "0",
+    style: {
+      height: props.height,
+      boxSizing: 'content-box',
+      border: "" + (props.border ? props.border : 'none'),
+      boxShadow: "" + (props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0')
+    }
+  }), /*#__PURE__*/React.createElement("p", {
+    "class": "caption"
+  }, props.title));
 }
 
 exports.CTA = CTA;

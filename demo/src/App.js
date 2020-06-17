@@ -15,7 +15,7 @@ import {
 
 const App = () => {
   return (
-    <div>
+    <div style={{margin: "auto", width: "80%"}}>
       <Version />
 
       <h3>Headline</h3>
@@ -49,7 +49,7 @@ const App = () => {
       <h3>IFrame</h3>
       <IFrame title="Iframe in action" src="http://www.trendspurt.com"
               height="600px"
-              style={{border: '1px solid black'}}></IFrame>
+              style={{}}></IFrame>
 
       <br/><br/><br/>
 
