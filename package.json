@@ -11,7 +11,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "publish": "git commit package.json ./dist -m 'touch version' && npm version patch&& git push && npm publish",
+    "version": "git commit package.json ./dist -m 'touch version' && npm version patch && git push",
+    "publish": "npm publish",
     "--- Legacy ---": "--------",
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
