@@ -4,7 +4,7 @@ var React = _interopDefault(require('react'));
 var Button = _interopDefault(require('@material-ui/core/Button'));
 var GetAppIcon = _interopDefault(require('@material-ui/icons/GetApp'));
 
-var version = "1.2.44";
+var version = "1.2.49";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -57,7 +57,7 @@ var _default$1 = /*#__PURE__*/function (_React$Component) {
     }, /*#__PURE__*/React.createElement("img", {
       src: this.props.src
     }), /*#__PURE__*/React.createElement("figcaption", null, this.props.children), this.props.source && /*#__PURE__*/React.createElement("figcaption", {
-      "class": "source"
+      className: "source"
     }, "(source: ", this.props.source, ")"));
   };
 
@@ -109,20 +109,55 @@ function YouTube(props) {
 }
 
 function IFrame(props) {
-  return /*#__PURE__*/React.createElement("figure", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "ts-IFrame",
-    style: {
-      height: props.height
-    }
+    style: Object.assign({}, props.style)
   }, /*#__PURE__*/React.createElement("iframe", {
     width: "100%",
     height: "100%",
     src: props.src,
-    frameBorder: "0"
-  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
+    frameBorder: "0",
+    style: {
+      height: props.height,
+      boxSizing: 'content-box',
+      border: "" + (props.border ? props.border : 'none'),
+      boxShadow: "" + (props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0')
+    }
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "caption"
+  }, props.title));
+}
+
+function Code(props) {
+  function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function format(input) {
+    var output = htmlEntities(input).replace(/##/g, '<strong>').replace(/#\/#/g, '</strong>');
+    return output;
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ts-Code",
+    style: Object.assign({}, props.style)
+  }, /*#__PURE__*/React.createElement("pre", {
+    style: {
+      fontSize: '.9rem',
+      padding: '20px',
+      backgroundColor: '#F6F6F6',
+      border: '1px solid #EEE',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement("code", {
+    dangerouslySetInnerHTML: {
+      __html: format(props.children)
+    }
+  })));
 }
 
 exports.CTA = CTA;
+exports.Code = Code;
 exports.Download = Download;
 exports.Headline = _default;
 exports.IFrame = IFrame;

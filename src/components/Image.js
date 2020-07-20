@@ -10,7 +10,7 @@ export default class extends React.Component {
         <img src={this.props.src}/>
         <figcaption>{this.props.children}</figcaption>
         {this.props.source &&
-          <figcaption class="source">(source: {this.props.source})</figcaption>
+          <figcaption className="source">(source: {this.props.source})</figcaption>
         }
       </figure>      
     );

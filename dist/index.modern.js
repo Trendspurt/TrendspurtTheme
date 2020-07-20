@@ -2,67 +2,48 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import GetAppIcon from '@material-ui/icons/GetApp';
 
-var version = "1.2.44";
+var version = "1.2.49";
 
-var Version = (function () {
+var Version = (() => {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
 });
 
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-var _default = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.tag = props.tag ? props.tag : 'h2';
-    return _this;
+class Headline extends React.Component {
+  constructor(props) {
+    super(props);
+    this.tag = props.tag ? props.tag : 'h2';
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("section", {
       className: "ts-Headline"
     }, /*#__PURE__*/React.createElement(this.tag, null, this.props.children));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var Text = (function (props) {
+var Text = (props => {
   return /*#__PURE__*/React.createElement("div", null, props.children);
 });
 
-var _default$1 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    return _React$Component.call(this, props) || this;
+class Image extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("figure", {
       className: "ts-Image"
     }, /*#__PURE__*/React.createElement("img", {
       src: this.props.src
     }), /*#__PURE__*/React.createElement("figcaption", null, this.props.children), this.props.source && /*#__PURE__*/React.createElement("figcaption", {
-      "class": "source"
+      className: "source"
     }, "(source: ", this.props.source, ")"));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var CTA = (function (props) {
+var CTA = (props => {
   return /*#__PURE__*/React.createElement("div", null, props.children);
 });
 
@@ -107,18 +88,52 @@ function YouTube(props) {
 }
 
 function IFrame(props) {
-  return /*#__PURE__*/React.createElement("figure", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "ts-IFrame",
-    style: {
-      height: props.height
-    }
+    style: Object.assign({}, props.style)
   }, /*#__PURE__*/React.createElement("iframe", {
     width: "100%",
     height: "100%",
     src: props.src,
-    frameBorder: "0"
-  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
+    frameBorder: "0",
+    style: {
+      height: props.height,
+      boxSizing: 'content-box',
+      border: `${props.border ? props.border : 'none'}`,
+      boxShadow: `${props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0'}`
+    }
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "caption"
+  }, props.title));
 }
 
-export { CTA, Download, _default as Headline, IFrame, _default$1 as Image, Text, Version, Video, YouTube };
+function Code(props) {
+  function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function format(input) {
+    let output = htmlEntities(input).replace(/##/g, '<strong>').replace(/#\/#/g, '</strong>');
+    return output;
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ts-Code",
+    style: Object.assign({}, props.style)
+  }, /*#__PURE__*/React.createElement("pre", {
+    style: {
+      fontSize: '.9rem',
+      padding: '20px',
+      backgroundColor: '#F6F6F6',
+      border: '1px solid #EEE',
+      overflow: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement("code", {
+    dangerouslySetInnerHTML: {
+      __html: format(props.children)
+    }
+  })));
+}
+
+export { CTA, Code, Download, Headline, IFrame, Image, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map
