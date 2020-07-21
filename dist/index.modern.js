@@ -5,7 +5,7 @@ import { Navbar, Container, Nav, NavDropdown, Form, Row, Col } from 'react-boots
 import Container$1 from 'react-bootstrap/Container';
 import 'react-bootstrap/Button';
 
-var version = "1.2.55";
+var version = "1.2.56";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
