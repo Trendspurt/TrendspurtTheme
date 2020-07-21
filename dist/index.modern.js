@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
 import 'react-bootstrap/Button';
 
-var version = "1.2.50";
+var version = "1.2.51";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
