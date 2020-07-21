@@ -1,6 +1,6 @@
 {
   "name": "@trendspurt/trendspurt-theme",
-  "version": "1.2.55",
+  "version": "1.2.56",
   "description": "Made with create-react-library",
   "author": "simonwidjaja",
   "main": "dist/index.js",
