@@ -1,0 +1,30 @@
+.HeroA {
+  position: relative;
+  min-height: 400px;
+  
+  @include media-breakpoint-up(md) {
+    min-height: 600px;
+  }
+
+  background-color: #282C31;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: #00E2B6;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  .backdrop {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: $color-black;
+    opacity: .6;
+  }
+
+  .row {
+    flex: 1 1 100%;
+  }  
+}

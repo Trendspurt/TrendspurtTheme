@@ -1,7 +1,10 @@
 import React from 'react'
 
+import Container from 'react-bootstrap/Container';
+
 import { 
   Version,
+  Section,
   Headline,
   Text, 
   Image, 
@@ -11,13 +14,65 @@ import {
   CTA, 
   IFrame, 
   Code, 
+  HeroA,
+  HeroBase,
+  Button
 } from 'trendspurt-theme'
 // import 'trendspurt-theme/dist/index.css'
 
 const App = () => {
   return (
-    <div style={{margin: "auto", width: "80%"}}>
+    <div>
       <Version />
+ 
+      <HeroBase title="Mojo for Adobe XD" metaTitle="default" subTitle="I am the subtitle"
+             background="demo/images/HeroA_bg.jpg"
+             backdrop1="demo/images/HeroA_backdrop.png">
+        <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">I am a huge Headline</Headline>
+        <Button>Download Now</Button>
+      </HeroBase>
+
+      <HeroBase title="Mojo for Adobe XD" metaTitle="default" subTitle="I am the subtitle"
+             background="demo/images/HeroA_bg.jpg">
+        <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">I am a huge Headline</Headline>
+      </HeroBase>
+
+      <HeroA title="Mojo for Adobe XD" metaTitle="default" subTitle="I am the subtitle"
+             background="demo/images/HeroA_bg.jpg">
+        <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">I am a huge Headline</Headline>
+      </HeroA>
+
+      <Container>
+        <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">I am a huge Headline</Headline>
+        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
+      </Container>
+
+      <Container>
+        <Headline type="h1">I am a Headline (h1)</Headline>
+        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
+        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
+      </Container>
+      
+      <Container>
+        <Headline type="h2">I am a Headline (h2)</Headline>
+        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
+        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
+      </Container>
+
+      <Container>
+        <Headline type="h3">I am a Headline (h3)</Headline>
+        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
+        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
+      </Container>
+
+
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 
       <h3>Headline</h3>
       <Headline>A Headline (default tag)</Headline>
@@ -63,11 +118,12 @@ const App = () => {
         `}
       </Code>
 
+{/*
       <h3>IFrame</h3>
       <IFrame title="Iframe in action" src="http://www.trendspurt.com"
               height="600px"
               style={{}}></IFrame>
-
+*/}
 
 
       <br/><br/><br/>
