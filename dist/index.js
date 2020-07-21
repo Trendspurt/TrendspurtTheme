@@ -3,11 +3,11 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = _interopDefault(require('react'));
 var Button$1 = _interopDefault(require('@material-ui/core/Button'));
 var GetAppIcon = _interopDefault(require('@material-ui/icons/GetApp'));
-var Container = _interopDefault(require('react-bootstrap/Container'));
 var reactBootstrap = require('react-bootstrap');
+var Container = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.2.51";
+var version = "1.2.52";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -133,7 +133,90 @@ function Code(props) {
   })));
 }
 
+var Button = (function (props) {
+  var className = props.className ? props.className : '';
+  var style = props.style ? props.style : {};
+  return /*#__PURE__*/React.createElement("div", {
+    className: "Button " + className,
+    style: style
+  }, /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement("div", {
+    className: "label"
+  }, props.children), /*#__PURE__*/React.createElement("div", {
+    className: "icon"
+  })));
+});
+
 var _default$1 = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(_default, _React$Component);
+
+  function _default(props) {
+    var _this;
+
+    _this = _React$Component.call(this, props) || this;
+    _this.tag = props.tag ? props.tag : 'h2';
+    _this.style = props.style ? props.style : {};
+    _this.brand = {
+      image: '',
+      width: '120px',
+      height: '40px'
+    };
+    Object.assign(_this.brand, props.brand);
+    return _this;
+  }
+
+  var _proto = _default.prototype;
+
+  _proto.render = function render() {
+    return /*#__PURE__*/React.createElement(reactBootstrap.Navbar, {
+      className: "NavBar",
+      style: this.style,
+      fixed: "top",
+      bg: "dark",
+      variant: "dark",
+      expand: "lg"
+    }, /*#__PURE__*/React.createElement(reactBootstrap.Container, null, /*#__PURE__*/React.createElement(reactBootstrap.Navbar.Brand, {
+      href: "/",
+      style: {
+        width: this.brand.width,
+        height: this.brand.height,
+        backgroundImage: "url(" + this.brand.image + ")"
+      }
+    }), /*#__PURE__*/React.createElement(reactBootstrap.Navbar.Toggle, {
+      "aria-controls": "basic-navbar-nav"
+    }), /*#__PURE__*/React.createElement(reactBootstrap.Navbar.Collapse, {
+      id: "basic-navbar-nav"
+    }, /*#__PURE__*/React.createElement(reactBootstrap.Nav, {
+      className: "ml-auto mr-auto"
+    }, /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
+      href: "#WIP"
+    }, "Explore"), /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
+      href: "#WIP"
+    }, "Learn"), /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
+      href: "#WIP"
+    }, "Mojo Pro"), /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
+      href: "#WIP"
+    }, "Market"), /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
+      href: "#WIP"
+    }, "Templates"), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown, {
+      title: "Dropdown",
+      id: "basic-nav-dropdown"
+    }, /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Item, {
+      href: "#action/3.1"
+    }, "Action"), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Item, {
+      href: "#action/3.2"
+    }, "Another action"), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Item, {
+      href: "#action/3.3"
+    }, "Something"), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Divider, null), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Item, {
+      href: "#action/3.4"
+    }, "Separated link"))), /*#__PURE__*/React.createElement(reactBootstrap.Form, {
+      inline: true
+    }, /*#__PURE__*/React.createElement(Button, null, "Login")))));
+  };
+
+  return _default;
+}(React.Component);
+
+var _default$2 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
@@ -151,7 +234,7 @@ var _default$1 = /*#__PURE__*/function (_React$Component) {
   return _default;
 }(React.Component);
 
-var _default$2 = /*#__PURE__*/function (_React$Component) {
+var _default$3 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
@@ -198,19 +281,6 @@ var _default$2 = /*#__PURE__*/function (_React$Component) {
   return _default;
 }(React.Component);
 
-var Button = (function (props) {
-  var className = props.className ? props.className : '';
-  var style = props.style ? props.style : {};
-  return /*#__PURE__*/React.createElement("div", {
-    className: "Button " + className,
-    style: style
-  }, /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement("div", {
-    className: "label"
-  }, props.children), /*#__PURE__*/React.createElement("div", {
-    className: "icon"
-  })));
-});
-
 var Text = (function (props) {
   var className = props.className ? props.className : '';
   var style = props.style ? props.style : {};
@@ -220,7 +290,7 @@ var Text = (function (props) {
   }, props.children);
 });
 
-var _default$3 = /*#__PURE__*/function (_React$Component) {
+var _default$4 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
@@ -248,9 +318,9 @@ var _default$3 = /*#__PURE__*/function (_React$Component) {
     }, /*#__PURE__*/React.createElement("div", {
       className: "backdrop1",
       style: this.backdrop1Style
-    }), /*#__PURE__*/React.createElement(reactBootstrap.Row, null, /*#__PURE__*/React.createElement(reactBootstrap.Col, {
+    }), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(reactBootstrap.Row, null, /*#__PURE__*/React.createElement(reactBootstrap.Col, {
       md: {
-        offset: 1,
+        offset: 0,
         span: 7
       }
     }, this.props.children), /*#__PURE__*/React.createElement(reactBootstrap.Col, {
@@ -258,13 +328,13 @@ var _default$3 = /*#__PURE__*/function (_React$Component) {
         offset: 1,
         span: 2
       }
-    })));
+    }))));
   };
 
   return _default;
 }(React.Component);
 
-var _default$4 = /*#__PURE__*/function (_React$Component) {
+var _default$5 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
@@ -314,12 +384,13 @@ exports.Button = Button;
 exports.CTA = CTA;
 exports.Code = Code;
 exports.Download = Download;
-exports.Headline = _default$2;
-exports.HeroA = _default$4;
-exports.HeroBase = _default$3;
+exports.Headline = _default$3;
+exports.HeroA = _default$5;
+exports.HeroBase = _default$4;
 exports.IFrame = IFrame;
 exports.Image = _default;
-exports.Section = _default$1;
+exports.NavBar = _default$1;
+exports.Section = _default$2;
 exports.Text = Text;
 exports.Version = Version;
 exports.Video = Video;

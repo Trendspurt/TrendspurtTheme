@@ -16,13 +16,16 @@ export default class extends React.Component {
        
         <div className="backdrop1" style={this.backdrop1Style}></div>
 
-        <Row>
-          <Col md={{offset: 1, span: 7}}>
-            {this.props.children}
-          </Col>
-          <Col md={{offset: 1, span: 2}}>
-          </Col>
-        </Row>
+        <Container>
+          <Row>
+            {/* <Col md={{offset: 1, span: 7}}> */}
+            <Col md={{offset: 0, span: 7}}>
+              {this.props.children}
+            </Col>
+            <Col md={{offset: 1, span: 2}}>
+            </Col>
+          </Row>
+        </Container>
 
       </Container>
     );

@@ -1,0 +1,36 @@
+.NavBar {
+  // position: relative;
+  z-index: 99;
+  // background-color: $color-black !important;
+  background-color: black !important;
+  color: $color-white;
+  // border-bottom: 1px solid rgba($color-white, 0.2);
+  border-bottom: 1px solid black;
+  
+  .navbar-brand {
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: space-evenly;
+
+    .nav-link {
+      padding: 0 12px;
+    }
+    @media (max-width: 992px) {
+      padding-top: 20px;
+      align-items: center;
+      .nav-link {
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .Button {
+    margin: 0;
+    transform: scale(.6);
+  }
+}

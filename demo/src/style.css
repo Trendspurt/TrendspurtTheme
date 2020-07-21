@@ -7290,3 +7290,27 @@ a.text-dark:hover, a.text-dark:focus {
       outline: 0; }
     .Button button:hover {
       transform: scale(1.03); }
+
+.NavBar {
+  z-index: 99;
+  background-color: black !important;
+  color: #FFFFFF;
+  border-bottom: 1px solid black; }
+  .NavBar .navbar-brand {
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat; }
+  .NavBar .navbar-nav {
+    display: flex;
+    justify-content: space-evenly; }
+    .NavBar .navbar-nav .nav-link {
+      padding: 0 12px; }
+    @media (max-width: 992px) {
+      .NavBar .navbar-nav {
+        padding-top: 20px;
+        align-items: center; }
+        .NavBar .navbar-nav .nav-link {
+          padding: 10px 0; } }
+  .NavBar .Button {
+    margin: 0;
+    transform: scale(0.6); }

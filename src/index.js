@@ -9,6 +9,7 @@ export {default as IFrame} from './components/wip/IFrame'
 export {default as Code} from './components/wip/Code'
 
 // Core
+export {default as NavBar} from './components/core/NavBar'
 export {default as Section} from './components/core/Section'
 export {default as Headline} from './components/core/Headline'
 export {default as Button} from './components/core/Button'

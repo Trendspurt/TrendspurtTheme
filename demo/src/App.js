@@ -16,7 +16,8 @@ import {
   Code, 
   HeroA,
   HeroBase,
-  Button
+  Button,
+  NavBar
 } from 'trendspurt-theme'
 // import 'trendspurt-theme/dist/index.css'
 
@@ -25,6 +26,8 @@ const App = () => {
     <div>
       <Version />
  
+      <NavBar brand={{image: "demo/images/brand_mojo.svg"}}></NavBar>
+
       <HeroBase title="Mojo for Adobe XD" metaTitle="default" subTitle="I am the subtitle"
              background="demo/images/HeroA_bg.jpg"
              backdrop1="demo/images/HeroA_backdrop.png">
