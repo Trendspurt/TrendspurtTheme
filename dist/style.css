@@ -7230,21 +7230,38 @@ a.text-dark:hover, a.text-dark:focus {
     color: #282C31; }
   .Headline h1 {
     font-weight: 900;
-    font-size: 46px;
-    line-height: 52px; }
+    font-size: 38px;
+    line-height: 40px; }
+    @media (min-width: 992px) {
+      .Headline h1 {
+        font-size: 46px;
+        line-height: 52px; } }
   .Headline h2 {
     font-weight: 900;
-    font-size: 38px;
-    line-height: 44px; }
+    font-size: 30px;
+    line-height: 32px; }
+    @media (min-width: 992px) {
+      .Headline h2 {
+        font-size: 38px;
+        line-height: 44px; } }
   .Headline h3 {
     font-weight: 900;
-    font-size: 28px;
-    line-height: 34px; }
+    font-size: 22px;
+    line-height: 24px; }
+    @media (min-width: 992px) {
+      .Headline h3 {
+        font-size: 28px;
+        line-height: 34px; } }
   .Headline .metaTitle {
     margin-top: 20px;
-    font-size: 30px;
-    line-height: 38px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
     text-transform: uppercase; }
+    @media (min-width: 992px) {
+      .Headline .metaTitle {
+        font-size: 24px;
+        line-height: 32px; } }
   .Headline .subTitle {
     margin-top: 20px;
     font-family: 'Bitter', serif;
@@ -7252,15 +7269,23 @@ a.text-dark:hover, a.text-dark:focus {
     line-height: 38px; }
   .Headline.huge h1 {
     font-weight: 900;
-    font-size: 100px;
-    line-height: 110px; }
+    font-size: 50px;
+    line-height: 55px; }
+    @media (min-width: 992px) {
+      .Headline.huge h1 {
+        font-size: 100px;
+        line-height: 110px; } }
 
 .Text {
   margin: 20px 0;
   color: #282C31;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 32px; }
+  font-size: 22px;
+  line-height: 30px; }
+  @media (min-width: 992px) {
+    .Text {
+      font-size: 24px;
+      line-height: 32px; } }
 
 .Button {
   margin: 20px 0; }
@@ -7272,11 +7297,15 @@ a.text-dark:hover, a.text-dark:focus {
     border: none;
     border-radius: 25px;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 22px;
+    line-height: 30px;
     font-weight: 500;
     background-color: #00E2B6;
     box-shadow: 0px 0px 30px 0px rgba(0, 226, 182, 0.6); }
+    @media (min-width: 992px) {
+      .Button button {
+        font-size: 24px;
+        line-height: 32px; } }
     .Button button .label {
       flex: 1 1 100px;
       padding: 4px 30px; }
@@ -7305,7 +7334,7 @@ a.text-dark:hover, a.text-dark:focus {
     justify-content: space-evenly; }
     .NavBar .navbar-nav .nav-link {
       padding: 0 12px; }
-    @media (max-width: 992px) {
+    @media (max-width: 990px) {
       .NavBar .navbar-nav {
         padding-top: 20px;
         align-items: center; }
@@ -7314,3 +7343,6 @@ a.text-dark:hover, a.text-dark:focus {
   .NavBar .Button {
     margin: 0;
     transform: scale(0.6); }
+
+.YouTube {
+  border: 11px solid gold; }

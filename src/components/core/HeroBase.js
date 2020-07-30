@@ -18,11 +18,11 @@ export default class extends React.Component {
 
         <Container>
           <Row>
-            {/* <Col md={{offset: 1, span: 7}}> */}
-            <Col md={{offset: 0, span: 7}}>
+            <Col lg={{offset: 0, span: 7}}>
               {this.props.children}
             </Col>
-            <Col md={{offset: 1, span: 2}}>
+            <Col lg={{offset: 1, span: 2}}>
+              RIGHT COL
             </Col>
           </Row>
         </Container>

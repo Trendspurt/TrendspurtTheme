@@ -5,28 +5,18 @@ import { Navbar, Container, Nav, NavDropdown, Form, Row, Col } from 'react-boots
 import Container$1 from 'react-bootstrap/Container';
 import 'react-bootstrap/Button';
 
-var version = "1.3.3";
+var version = "1.3.4";
 
-var Version = (function () {
+var Version = (() => {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
 });
 
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-var _default = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    return _React$Component.call(this, props) || this;
+class Image extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("figure", {
       className: "ts-Image"
     }, /*#__PURE__*/React.createElement("img", {
@@ -34,12 +24,11 @@ var _default = /*#__PURE__*/function (_React$Component) {
     }), /*#__PURE__*/React.createElement("figcaption", null, this.props.children), this.props.source && /*#__PURE__*/React.createElement("figcaption", {
       className: "source"
     }, "(source: ", this.props.source, ")"));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var CTA = (function (props) {
+var CTA = (props => {
   return /*#__PURE__*/React.createElement("div", null, props.children);
 });
 
@@ -70,19 +59,6 @@ function Video(props) {
   })), /*#__PURE__*/React.createElement("figcaption", null, props.title));
 }
 
-function YouTube(props) {
-  return /*#__PURE__*/React.createElement("figure", {
-    className: "ts-YouTube"
-  }, /*#__PURE__*/React.createElement("iframe", {
-    width: "100%",
-    height: "100%",
-    src: "https://www.youtube.com/embed/" + props.id,
-    frameBorder: "0",
-    allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-    allowFullScreen: true
-  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
-}
-
 function IFrame(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "ts-IFrame",
@@ -95,8 +71,8 @@ function IFrame(props) {
     style: {
       height: props.height,
       boxSizing: 'content-box',
-      border: "" + (props.border ? props.border : 'none'),
-      boxShadow: "" + (props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0')
+      border: `${props.border ? props.border : 'none'}`,
+      boxShadow: `${props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0'}`
     }
   }), /*#__PURE__*/React.createElement("p", {
     className: "caption"
@@ -109,7 +85,7 @@ function Code(props) {
   }
 
   function format(input) {
-    var output = htmlEntities(input).replace(/##/g, '<strong>').replace(/#\/#/g, '</strong>');
+    let output = htmlEntities(input).replace(/##/g, '<strong>').replace(/#\/#/g, '</strong>');
     return output;
   }
 
@@ -131,9 +107,9 @@ function Code(props) {
   })));
 }
 
-var Button = (function (props) {
-  var className = props.className ? props.className : '';
-  var style = props.style ? props.style : {};
+var Button = (props => {
+  const className = props.className ? props.className : '';
+  const style = props.style ? props.style : {};
   return /*#__PURE__*/React.createElement("div", {
     className: "Button " + className,
     style: style
@@ -144,27 +120,20 @@ var Button = (function (props) {
   })));
 });
 
-var _default$1 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.tag = props.tag ? props.tag : 'h2';
-    _this.style = props.style ? props.style : {};
-    _this.brand = {
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.tag = props.tag ? props.tag : 'h2';
+    this.style = props.style ? props.style : {};
+    this.brand = {
       image: '',
       width: '120px',
       height: '40px'
     };
-    Object.assign(_this.brand, props.brand);
-    return _this;
+    Object.assign(this.brand, props.brand);
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement(Navbar, {
       className: "NavBar",
       style: this.style,
@@ -177,7 +146,7 @@ var _default$1 = /*#__PURE__*/function (_React$Component) {
       style: {
         width: this.brand.width,
         height: this.brand.height,
-        backgroundImage: "url(" + this.brand.image + ")"
+        backgroundImage: `url(${this.brand.image})`
       }
     }), /*#__PURE__*/React.createElement(Navbar.Toggle, {
       "aria-controls": "basic-navbar-nav"
@@ -209,63 +178,50 @@ var _default$1 = /*#__PURE__*/function (_React$Component) {
     }, "Separated link"))), /*#__PURE__*/React.createElement(Form, {
       inline: true
     }, /*#__PURE__*/React.createElement(Button, null, "Login")))));
-  };
-
-  return _default;
-}(React.Component);
-
-var _default$2 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    return _React$Component.call(this, props) || this;
   }
 
-  var _proto = _default.prototype;
+}
 
-  _proto.render = function render() {
+class Section extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
     return /*#__PURE__*/React.createElement("section", {
       className: "Section"
     }, /*#__PURE__*/React.createElement(Container$1, null, this.props.children));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var _default$3 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.className = '';
+class Headline extends React.Component {
+  constructor(props) {
+    super(props);
+    this.className = '';
 
     switch (props.type) {
       case 'huge':
-        _this.tag = 'h1';
-        _this.className = 'huge';
+        this.tag = 'h1';
+        this.className = 'huge';
         break;
 
       case 'h1':
       case 'h2':
       case 'h3':
       case 'h4':
-        _this.tag = props.type;
+        this.tag = props.type;
         break;
 
       default:
-        _this.tag = 'h2';
+        this.tag = 'h2';
     }
 
-    _this.className = props.className ? _this.className + ' ' + props.className : _this.className;
-    _this.style = props.style ? props.style : {};
-    return _this;
+    this.className = props.className ? this.className + ' ' + props.className : this.className;
+    this.style = props.style ? props.style : {};
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("div", {
       className: "Headline " + this.className,
       style: this.style
@@ -274,41 +230,33 @@ var _default$3 = /*#__PURE__*/function (_React$Component) {
     }, this.props.metaTitle) : '', /*#__PURE__*/React.createElement(this.tag, null, this.props.children), this.props.subTitle ? /*#__PURE__*/React.createElement("div", {
       className: "subTitle"
     }, this.props.subTitle) : '');
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var Text = (function (props) {
-  var className = props.className ? props.className : '';
-  var style = props.style ? props.style : {};
+var Text = (props => {
+  const className = props.className ? props.className : '';
+  const style = props.style ? props.style : {};
   return /*#__PURE__*/React.createElement("div", {
     className: "Text " + className,
     style: style
   }, props.children);
 });
 
-var _default$4 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.tag = props.tag ? props.tag : 'h2';
-    _this.style = props.style ? props.style : {};
-    Object.assign(_this.style, {
-      backgroundImage: "url(" + _this.props.background + ")"
+class HeroBase extends React.Component {
+  constructor(props) {
+    super(props);
+    this.tag = props.tag ? props.tag : 'h2';
+    this.style = props.style ? props.style : {};
+    Object.assign(this.style, {
+      backgroundImage: `url(${this.props.background})`
     });
-    _this.backdrop1Style = props.backdrop1 ? {
-      backgroundImage: "url(" + _this.props.backdrop1 + ")"
+    this.backdrop1Style = props.backdrop1 ? {
+      backgroundImage: `url(${this.props.backdrop1})`
     } : {};
-    return _this;
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement(Container$1, {
       fluid: true,
       className: "HeroBase",
@@ -317,39 +265,31 @@ var _default$4 = /*#__PURE__*/function (_React$Component) {
       className: "backdrop1",
       style: this.backdrop1Style
     }), /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
-      md: {
+      lg: {
         offset: 0,
         span: 7
       }
     }, this.props.children), /*#__PURE__*/React.createElement(Col, {
-      md: {
+      lg: {
         offset: 1,
         span: 2
       }
-    }))));
-  };
-
-  return _default;
-}(React.Component);
-
-var _default$5 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.tag = props.tag ? props.tag : 'h2';
-    _this.style = props.style ? props.style : {};
-    Object.assign(_this.style, {
-      backgroundImage: "url(" + _this.props.background + ")"
-    });
-    return _this;
+    }, "RIGHT COL"))));
   }
 
-  var _proto = _default.prototype;
+}
 
-  _proto.render = function render() {
+class HeroA extends React.Component {
+  constructor(props) {
+    super(props);
+    this.tag = props.tag ? props.tag : 'h2';
+    this.style = props.style ? props.style : {};
+    Object.assign(this.style, {
+      backgroundImage: `url(${this.props.background})`
+    });
+  }
+
+  render() {
     return /*#__PURE__*/React.createElement(Container$1, {
       fluid: true,
       className: "HeroA",
@@ -373,10 +313,22 @@ var _default$5 = /*#__PURE__*/function (_React$Component) {
         span: 2
       }
     })));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-export { Button, CTA, Code, Download, _default$3 as Headline, _default$5 as HeroA, _default$4 as HeroBase, IFrame, _default as Image, _default$1 as NavBar, _default$2 as Section, Text, Version, Video, YouTube };
+function YouTube(props) {
+  return /*#__PURE__*/React.createElement("figure", {
+    className: "YouTube"
+  }, /*#__PURE__*/React.createElement("iframe", {
+    width: "100%",
+    height: "100%",
+    src: "https://www.youtube.com/embed/" + props.id,
+    frameBorder: "0",
+    allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+    allowFullScreen: true
+  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
+}
+
+export { Button, CTA, Code, Download, Headline, HeroA, HeroBase, IFrame, Image, NavBar, Section, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map

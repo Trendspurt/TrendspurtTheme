@@ -17,10 +17,8 @@
   }
   .metaTitle {
     margin-top: 20px;
-    font-size: 30px;
-    line-height: 38px;
+    @include font-default;
     text-transform: uppercase;
-    
   }
   .subTitle {
     margin-top: 20px;

@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.3";
+var version = "1.3.4";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -70,19 +70,6 @@ function Video(props) {
     src: props.path,
     type: "video/mp4"
   })), /*#__PURE__*/React.createElement("figcaption", null, props.title));
-}
-
-function YouTube(props) {
-  return /*#__PURE__*/React.createElement("figure", {
-    className: "ts-YouTube"
-  }, /*#__PURE__*/React.createElement("iframe", {
-    width: "100%",
-    height: "100%",
-    src: "https://www.youtube.com/embed/" + props.id,
-    frameBorder: "0",
-    allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-    allowFullScreen: true
-  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
 }
 
 function IFrame(props) {
@@ -319,16 +306,16 @@ var _default$4 = /*#__PURE__*/function (_React$Component) {
       className: "backdrop1",
       style: this.backdrop1Style
     }), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(reactBootstrap.Row, null, /*#__PURE__*/React.createElement(reactBootstrap.Col, {
-      md: {
+      lg: {
         offset: 0,
         span: 7
       }
     }, this.props.children), /*#__PURE__*/React.createElement(reactBootstrap.Col, {
-      md: {
+      lg: {
         offset: 1,
         span: 2
       }
-    }))));
+    }, "RIGHT COL"))));
   };
 
   return _default;
@@ -379,6 +366,19 @@ var _default$5 = /*#__PURE__*/function (_React$Component) {
 
   return _default;
 }(React.Component);
+
+function YouTube(props) {
+  return /*#__PURE__*/React.createElement("figure", {
+    className: "YouTube"
+  }, /*#__PURE__*/React.createElement("iframe", {
+    width: "100%",
+    height: "100%",
+    src: "https://www.youtube.com/embed/" + props.id,
+    frameBorder: "0",
+    allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+    allowFullScreen: true
+  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
+}
 
 exports.Button = Button;
 exports.CTA = CTA;
