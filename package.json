@@ -11,13 +11,13 @@
     "node": ">=10"
   },
   "scripts": {
-    "______version": "git commit package.json -m 'touch version' && npm version patch",
-    "release": "npm version patch; npm publish",
+    "// Main ---": "--------",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "styles:watch": "node-sass src/styles/style.scss -rwo dist",
     "styles:watch:demo": "node-sass src/styles/style.scss -rwo demo/src",
-    "--- Legacy ---": "--------",
+    "release": "npm version patch; npm publish",
+    "// Legacy ---": "--------",
     "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",

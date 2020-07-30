@@ -42,7 +42,7 @@ const App = () => {
 
       <Container>
         <Headline type="h1">YouTube</Headline>
-        <YouTube id="i6952GF3pdI" title="This YouTube video shows the example composition in action" />
+        {/* <YouTube id="i6952GF3pdI" title="This YouTube video shows the example composition in action" /> */}
       </Container>
 
       <Container>
@@ -105,10 +105,10 @@ const App = () => {
       <Download url="DownloadUrl.txt">This is the download text</Download>
 
       <h3>YouTube</h3>
-      <YouTube id="i6952GF3pdI" title="This YouTube video shows the example composition in action" />
+      {/* <YouTube id="i6952GF3pdI" title="This YouTube video shows the example composition in action" /> */}
 
       <h3>Video</h3>
-      <Video title="This video shows the example composition in action" />
+      {/* <Video title="This video shows the example composition in action" /> */}
 
       <h3>CTA (WIP)</h3>
       <CTA>A simple call to action</CTA>

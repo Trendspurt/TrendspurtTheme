@@ -5,7 +5,7 @@ import { Navbar, Container, Nav, NavDropdown, Form, Row, Col } from 'react-boots
 import Container$1 from 'react-bootstrap/Container';
 import 'react-bootstrap/Button';
 
-var version = "1.3.4";
+var version = "1.3.5";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -377,6 +377,8 @@ function YouTube(props) {
     allowFullScreen: true
   }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
 }
+
+console.log("[ TsTheme v" + version + " ]");
 
 export { Button, CTA, Code, Download, _default$3 as Headline, _default$5 as HeroA, _default$4 as HeroBase, IFrame, _default as Image, _default$1 as NavBar, _default$2 as Section, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map

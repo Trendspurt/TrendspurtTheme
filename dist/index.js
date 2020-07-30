@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.4";
+var version = "1.3.5";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -379,6 +379,8 @@ function YouTube(props) {
     allowFullScreen: true
   }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
 }
+
+console.log("[ TsTheme v" + version + " ]");
 
 exports.Button = Button;
 exports.CTA = CTA;

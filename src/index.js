@@ -1,3 +1,6 @@
+import {version} from '../package.json';
+console.log(`[ TsTheme v${version} ]`);
+
 // WIP 
 export {default as Version} from './components/wip/Version'
 export {default as Image} from './components/wip/Image'
