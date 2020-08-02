@@ -42,7 +42,6 @@ const App = () => {
       <NavDropdown.Item href="#action/3.4" key="994">Separated link</NavDropdown.Item>,
       ]}
     </NavDropdown>
-
   ];
 
   return (
@@ -50,8 +49,7 @@ const App = () => {
       <Version />
  
       <NavBar brand={{image: "demo/images/brand_mojo.svg"}}
-              items={navItems}
-      ></NavBar>
+              items={navItems}></NavBar>
 
       <HeroBase title="Mojo for Adobe XD"
              background="demo/images/HeroA_bg.jpg"
@@ -123,7 +121,7 @@ const App = () => {
         <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
       </Container>
 
-      <Claim title="Use Mojo for" background="demo/images/Claim_bg_shapes.png" className="inverted">
+      <Claim title="Use Mojo for" background="demo/images/Claim_bg_shapes.png" inverted>
         <strong>RICH PROTOTYPING</strong> / <strong><nobr>WEB EXPORT</nobr></strong> / <strong><nobr>RICH CONTENT</nobr></strong> / UI ANIMATIONS / STORYTELLING / SCRIPTING / INTERACTIVE INFOGRAPHICS / BANNERS / CONFIGURATORS / ...
       </Claim>
 

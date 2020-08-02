@@ -2,7 +2,8 @@ import React from 'react'
 import {Container, Row, Col} from 'react-bootstrap';
 
 export default (props) => {
-  const className = props.className ? props.className : '';
+  let className = props.className ? props.className : '';
+  className += (props.inverted) ? 'inverted' : '';
   const style = props.style ? props.style : {};
   Object.assign(style, {backgroundImage: `url(${props.background})`});
   return (
