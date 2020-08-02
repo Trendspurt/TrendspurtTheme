@@ -7165,6 +7165,104 @@ a.text-dark:hover, a.text-dark:focus {
 * {
   font-family: 'Barlow', sans-serif; }
 
+.font-huge {
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 54px; }
+  @media (min-width: 992px) {
+    .font-huge {
+      font-size: 100px;
+      line-height: 110px; } }
+
+.font-h1 {
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 40px; }
+  @media (min-width: 992px) {
+    .font-h1 {
+      font-size: 46px;
+      line-height: 52px; } }
+
+.font2 {
+  font-family: 'Bitter', serif;
+  font-weight: 400; }
+
+.font2-huge {
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px; }
+  @media (min-width: 992px) {
+    .font2-huge {
+      font-size: 38px;
+      line-height: 40px; } }
+
+.font2-h1 {
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px; }
+  @media (min-width: 992px) {
+    .font2-h1 {
+      font-size: 30px;
+      line-height: 38px; } }
+
+.Claim {
+  margin: 60px 0;
+  padding: 80px 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  text-align: center; }
+  .Claim hr {
+    width: 100px;
+    height: 6px;
+    margin: 30px auto;
+    border: none;
+    background-color: #E4004C; }
+  .Claim.inverted {
+    background-color: #282C31;
+    color: #FFFFFF; }
+
+.MojoEmbed .frameWrapper {
+  position: relative; }
+  .MojoEmbed .frameWrapper iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 12px; }
+
+.ImageText .firstCol {
+  display: flex; }
+  @media (min-width: 992px) {
+    .ImageText .firstCol {
+      justify-content: center; } }
+
+.ImageText .secondCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.ImageText .image {
+  display: inline-block;
+  min-width: 100px;
+  min-height: 100px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.ImageText.reversed .row {
+  flex-direction: row-reverse; }
+
+.ImageText.reversed .firstCol {
+  text-align: left; }
+
+@media (min-width: 992px) {
+  .ImageText.reversed .secondCol {
+    text-align: right; } }
+
 .HeroBase {
   position: relative;
   min-height: 400px;
@@ -7187,10 +7285,11 @@ a.text-dark:hover, a.text-dark:focus {
     bottom: 0;
     left: 0;
     background-color: #282C31;
-    background-size: 1920px;
+    background-size: 700px;
     background-position: 50% 50%;
     opacity: .6; }
   .HeroBase .row {
+    padding: 60px 0;
     flex: 1 1 100%; }
     .HeroBase .row .Headline .metaTitle {
       color: #E4004C; }
@@ -7263,10 +7362,18 @@ a.text-dark:hover, a.text-dark:focus {
         font-size: 24px;
         line-height: 32px; } }
   .Headline .subTitle {
-    margin-top: 20px;
+    margin-top: 10px;
     font-family: 'Bitter', serif;
-    font-size: 30px;
-    line-height: 38px; }
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px; }
+    @media (min-width: 992px) {
+      .Headline .subTitle {
+        font-size: 30px;
+        line-height: 38px; } }
+    @media (min-width: 992px) {
+      .Headline .subTitle {
+        margin-top: 20px; } }
   .Headline.huge h1 {
     font-weight: 900;
     font-size: 50px;
@@ -7288,7 +7395,10 @@ a.text-dark:hover, a.text-dark:focus {
       line-height: 32px; } }
 
 .Button {
+  display: inline-block;
   margin: 20px 0; }
+  .Button::before {
+    content: "\A"; }
   .Button button {
     display: flex;
     justify-content: space-between;
@@ -7344,5 +7454,29 @@ a.text-dark:hover, a.text-dark:focus {
     margin: 0;
     transform: scale(0.6); }
 
+.Footer {
+  padding: 40px;
+  background-color: #282C31;
+  color: #FFFFFF; }
+
 .YouTube {
-  border: 11px solid gold; }
+  background-color: #282C31;
+  padding: 80px 0; }
+  .YouTube .frameWrapper {
+    position: relative;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */ }
+    .YouTube .frameWrapper iframe {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 12px;
+      border: 3px solid #000; }
+  .YouTube figcaption {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5); }

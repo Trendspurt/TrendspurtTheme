@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Container from 'react-bootstrap/Container';
+import {Container, Nav, NavDropdown} from 'react-bootstrap';
 
 import { 
   Version,
@@ -17,33 +17,116 @@ import {
   HeroA,
   HeroBase,
   Button,
-  NavBar
+  NavBar,
+  Claim,
+  Footer,
+  MojoEmbed,
+  ImageText,
 } from 'trendspurt-theme'
 // import 'trendspurt-theme/dist/index.css'
 
 const App = () => {
+
+  const navItems = [
+    <Nav.Link href="https://exploremojo.com" key="1">Explore</Nav.Link>,
+    <Nav.Link href="#WIP" key="2">Learn</Nav.Link>,
+    <Nav.Link href="#WIP" key="3">Mojo Pro</Nav.Link>,
+    <Nav.Link href="#WIP" key="4">Market</Nav.Link>,
+    <Nav.Link href="#WIP" key="5">Templates</Nav.Link>,
+    <NavDropdown title="More" id="basic-nav-dropdown" key="6">
+      {[
+      <NavDropdown.Item href="#action/3.1" key="991">Action</NavDropdown.Item>,
+      <NavDropdown.Item href="#action/3.2" key="992">Another action</NavDropdown.Item>,
+      <NavDropdown.Item href="#action/3.3" key="993">Something</NavDropdown.Item>,
+      <NavDropdown.Divider key="994" />,
+      <NavDropdown.Item href="#action/3.4" key="994">Separated link</NavDropdown.Item>,
+      ]}
+    </NavDropdown>
+
+  ];
+
   return (
     <div>
       <Version />
  
-      <NavBar brand={{image: "demo/images/brand_mojo.svg"}}></NavBar>
+      <NavBar brand={{image: "demo/images/brand_mojo.svg"}}
+              items={navItems}
+      ></NavBar>
 
       <HeroBase title="Mojo for Adobe XD"
              background="demo/images/HeroA_bg.jpg"
              backdrop1="demo/images/HeroA_backdrop.png">
-        <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">I am a huge Headline</Headline>
+        <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">Phoenix Design System</Headline>
         <Button>Download Now</Button>
       </HeroBase>
+
+      <YouTube id="i6952GF3pdI" title="This YouTube video shows the example composition in action" />
 
       <Container>
         <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">I am a huge Headline</Headline>
         <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
       </Container>
 
+      <ImageText>
+        <image>demo/images/HeroA_bg.jpg</image>
+        <title>100% Extensible</title>
+        <body>Coders are also specifically invited to the Mojo party. Mojo supports several options and hooks to add custom scripts (e.g. dynamic data integration, UI extensions etc.) <br/> <Button>Hello</Button></body>
+      </ImageText>
+
+      <ImageText reversed>
+        <image>demo/images/HeroA_bg.jpg</image>
+        <title>Incredible live filter layers</title>
+        <body>Effects like blurs, lighting, distortions and perspective corrections can all be applied as non-destructive live filter layers. This means you can erase away from them, mask them, reorder them and adjust parameters at any time.
+          <ul>
+            <li>Apply to single layers or over a whole layer stack</li>
+            <li>Mask and erase areas after they have been applied</li>
+            <li>Live full resolution preview at all times</li>
+          </ul>
+          <Button>Hello</Button></body>
+      </ImageText>
+
+      <ImageText>
+        <image>demo/images/HeroA_bg.jpg</image>
+        <title>Incredible live filter layers</title>
+        <body>Effects like blurs, lighting, distortions and perspective corrections can all be applied as non-destructive live filter layers. This means you can erase away from them, mask them, reorder them and adjust parameters at any time. It’s a completely new way to work. <br/> <Button>Hello</Button></body>
+      </ImageText>
+
+      <ImageText reversed>
+        <image>demo/images/HeroA_bg.jpg</image>
+        <title>Incredible live filter layers</title>
+        <body>Effects like blurs, lighting, distortions and perspective corrections can all be applied as non-destructive live filter layers. This means you can erase away from them, mask them, reorder them and adjust parameters at any time. It’s a completely new way to work. <br/> <Button>Hello</Button></body>
+      </ImageText>
+
+      <ImageText>
+        <image>demo/images/HeroA_bg.jpg</image>
+        <title>Incredible live filter layers</title>
+        <body>Effects like blurs, lighting, distortions and perspective corrections can all be applied as non-destructive live filter layers. This means you can erase away from them, mask them, reorder them and adjust parameters at any time.
+          <ul>
+            <li>Add filter effects non-destructively</li>
+            <li>Apply to single layers or over a whole layer stack</li>
+            <li>Mask and erase areas after they have been applied</li>
+            <li>Live full resolution preview at all times</li>
+          </ul>
+          <Button>Hello</Button></body>
+      </ImageText>
+
+
+      <MojoEmbed src="demo/mojoDemos/DummyDemo/index.html" aspectRatio={800/600}></MojoEmbed>
+      <MojoEmbed src="demo/mojoDemos/DummyDemo/index.html"></MojoEmbed>
+
+      <Claim title="Use Mojo for" background="demo/images/Claim_bg_shapes.png">
+        <strong>RICH PROTOTYPING</strong> / <strong><nobr>WEB EXPORT</nobr></strong> / <strong><nobr>RICH CONTENT</nobr></strong> / UI ANIMATIONS / STORYTELLING / SCRIPTING / INTERACTIVE INFOGRAPHICS / BANNERS / CONFIGURATORS / ...
+      </Claim>
+
       <Container>
-        <Headline type="h1">YouTube</Headline>
-        {/* <YouTube id="i6952GF3pdI" title="This YouTube video shows the example composition in action" /> */}
+        <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">I am a huge Headline</Headline>
+        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
       </Container>
+
+      <Claim title="Use Mojo for" background="demo/images/Claim_bg_shapes.png" className="inverted">
+        <strong>RICH PROTOTYPING</strong> / <strong><nobr>WEB EXPORT</nobr></strong> / <strong><nobr>RICH CONTENT</nobr></strong> / UI ANIMATIONS / STORYTELLING / SCRIPTING / INTERACTIVE INFOGRAPHICS / BANNERS / CONFIGURATORS / ...
+      </Claim>
+
 
       <Container>
         <Headline type="h1">I am a Headline (h1)</Headline>
@@ -93,13 +176,14 @@ const App = () => {
       <h3>Text</h3>
       <Text>Prodigy</Text>
 
+{/* 
       <h3>Image</h3>
       <Image src="https://images.unsplash.com/photo-1591041430413-7c3355d2f576?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60">
         Image with caption
       </Image>      
       <Image src="https://images.unsplash.com/photo-1591041430413-7c3355d2f576?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" source="Some Company XYZ">
         Image with caption and source attribute
-      </Image>      
+      </Image>       */}
       
       <h3>Download</h3>
       <Download url="DownloadUrl.txt">This is the download text</Download>
@@ -138,6 +222,10 @@ const App = () => {
 
 
       <br/><br/><br/>
+
+      <Footer>
+        &copy; 2020 Trendspurt GmbH
+      </Footer>
 
     </div>
   )

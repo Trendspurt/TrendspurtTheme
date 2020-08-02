@@ -1,0 +1,21 @@
+.Claim {
+  margin: 60px 0;
+  padding: 80px 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  text-align: center;
+
+  hr {
+    width: 100px;
+    height: 6px;
+    margin: 30px auto;
+    border: none;
+    background-color: $color-accent1; 
+  }
+
+  &.inverted {
+    background-color: $color-black;
+    color: $color-white;
+  }
+}

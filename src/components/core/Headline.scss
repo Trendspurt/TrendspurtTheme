@@ -21,10 +21,11 @@
     text-transform: uppercase;
   }
   .subTitle {
-    margin-top: 20px;
-    @include font-bitter;
-    font-size: 30px;
-    line-height: 38px;    
+    margin-top: 10px;
+    @include font2-h1;
+    @include media-breakpoint-up(lg) {
+      margin-top: 20px;
+    }
   }
 
   &.huge {

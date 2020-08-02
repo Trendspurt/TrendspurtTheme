@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.5";
+var version = "1.3.6";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -174,34 +174,22 @@ var _default$1 = /*#__PURE__*/function (_React$Component) {
       id: "basic-navbar-nav"
     }, /*#__PURE__*/React.createElement(reactBootstrap.Nav, {
       className: "ml-auto mr-auto"
-    }, /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
-      href: "#WIP"
-    }, "Explore"), /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
-      href: "#WIP"
-    }, "Learn"), /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
-      href: "#WIP"
-    }, "Mojo Pro"), /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
-      href: "#WIP"
-    }, "Market"), /*#__PURE__*/React.createElement(reactBootstrap.Nav.Link, {
-      href: "#WIP"
-    }, "Templates"), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown, {
-      title: "Dropdown",
-      id: "basic-nav-dropdown"
-    }, /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Item, {
-      href: "#action/3.1"
-    }, "Action"), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Item, {
-      href: "#action/3.2"
-    }, "Another action"), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Item, {
-      href: "#action/3.3"
-    }, "Something"), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Divider, null), /*#__PURE__*/React.createElement(reactBootstrap.NavDropdown.Item, {
-      href: "#action/3.4"
-    }, "Separated link"))), /*#__PURE__*/React.createElement(reactBootstrap.Form, {
+    }, this.props.items), /*#__PURE__*/React.createElement(reactBootstrap.Form, {
       inline: true
     }, /*#__PURE__*/React.createElement(Button, null, "Login")))));
   };
 
   return _default;
 }(React.Component);
+
+var Footer = (function (props) {
+  var className = props.className ? props.className : '';
+  var style = props.style ? props.style : {};
+  return /*#__PURE__*/React.createElement("div", {
+    className: "Footer " + className,
+    style: style
+  }, props.children);
+});
 
 var _default$2 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
@@ -277,15 +265,72 @@ var Text = (function (props) {
   }, props.children);
 });
 
-var _default$4 = /*#__PURE__*/function (_React$Component) {
+var _default$4 = /*#__PURE__*/function () {
+  function _default() {}
+
+  _default.getSlot = function getSlot(props, id) {
+    return props.children.find(function (item) {
+      return item.type === id;
+    }).props.children;
+  };
+
+  return _default;
+}();
+
+var ImageText = (function (props) {
+  var className = props.className ? props.className : '';
+  className += props.reversed ? 'reversed' : '';
+  var style = props.style ? props.style : {};
+  Object.assign(style, {
+    backgroundImage: "url(" + props.background + ")"
+  });
+  var aspectRatio = props.aspectRatio ? 1 / props.aspectRatio : 1 / (16 / 9);
+  return /*#__PURE__*/React.createElement("section", {
+    className: "ImageText " + className,
+    style: style
+  }, /*#__PURE__*/React.createElement(reactBootstrap.Container, null, /*#__PURE__*/React.createElement(reactBootstrap.Row, null, /*#__PURE__*/React.createElement(reactBootstrap.Col, {
+    lg: props.reversed ? {
+      offset: 1,
+      span: 6
+    } : {
+      offset: 0,
+      span: 6
+    },
+    className: "firstCol"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "frameWrapper",
+    style: {
+      paddingTop: aspectRatio * 100 + "%"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "image",
+    style: {
+      backgroundImage: "url(" + _default$4.getSlot(props, 'image') + ")"
+    }
+  }))), /*#__PURE__*/React.createElement(reactBootstrap.Col, {
+    lg: props.reversed ? {
+      offset: 0,
+      span: 5
+    } : {
+      offset: 1,
+      span: 5
+    },
+    className: "secondCol"
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: "font2-h1"
+  }, _default$4.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, _default$4.getSlot(props, 'body'))))));
+});
+
+var _default$5 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
     var _this;
 
     _this = _React$Component.call(this, props) || this;
-    _this.tag = props.tag ? props.tag : 'h2';
+    _this.className = props.className ? props.className : '';
     _this.style = props.style ? props.style : {};
+    _this.tag = props.tag ? props.tag : 'h2';
     Object.assign(_this.style, {
       backgroundImage: "url(" + _this.props.background + ")"
     });
@@ -298,30 +343,25 @@ var _default$4 = /*#__PURE__*/function (_React$Component) {
   var _proto = _default.prototype;
 
   _proto.render = function render() {
-    return /*#__PURE__*/React.createElement(Container, {
+    return /*#__PURE__*/React.createElement(reactBootstrap.Container, {
       fluid: true,
-      className: "HeroBase",
+      className: "HeroBase " + this.className,
       style: this.style
     }, /*#__PURE__*/React.createElement("div", {
       className: "backdrop1",
       style: this.backdrop1Style
-    }), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(reactBootstrap.Row, null, /*#__PURE__*/React.createElement(reactBootstrap.Col, {
+    }), /*#__PURE__*/React.createElement(reactBootstrap.Container, null, /*#__PURE__*/React.createElement(reactBootstrap.Row, null, /*#__PURE__*/React.createElement(reactBootstrap.Col, {
       lg: {
         offset: 0,
-        span: 7
+        span: 12
       }
-    }, this.props.children), /*#__PURE__*/React.createElement(reactBootstrap.Col, {
-      lg: {
-        offset: 1,
-        span: 2
-      }
-    }, "RIGHT COL"))));
+    }, this.props.children))));
   };
 
   return _default;
 }(React.Component);
 
-var _default$5 = /*#__PURE__*/function (_React$Component) {
+var _default$6 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
@@ -367,9 +407,35 @@ var _default$5 = /*#__PURE__*/function (_React$Component) {
   return _default;
 }(React.Component);
 
+var Claim = (function (props) {
+  var className = props.className ? props.className : '';
+  var style = props.style ? props.style : {};
+  Object.assign(style, {
+    backgroundImage: "url(" + props.background + ")"
+  });
+  return /*#__PURE__*/React.createElement("section", {
+    className: "Claim " + className,
+    style: style
+  }, /*#__PURE__*/React.createElement(reactBootstrap.Container, null, /*#__PURE__*/React.createElement(reactBootstrap.Row, null, /*#__PURE__*/React.createElement(reactBootstrap.Col, {
+    lg: {
+      offset: 1,
+      span: 10
+    }
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: "font2-h1"
+  }, props.title), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("p", {
+    className: "font-h1",
+    style: {
+      fontWeight: 'normal'
+    }
+  }, props.children)))));
+});
+
 function YouTube(props) {
   return /*#__PURE__*/React.createElement("figure", {
     className: "YouTube"
+  }, /*#__PURE__*/React.createElement(reactBootstrap.Container, null, /*#__PURE__*/React.createElement("div", {
+    className: "frameWrapper"
   }, /*#__PURE__*/React.createElement("iframe", {
     width: "100%",
     height: "100%",
@@ -377,20 +443,54 @@ function YouTube(props) {
     frameBorder: "0",
     allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
     allowFullScreen: true
-  }), /*#__PURE__*/React.createElement("figcaption", null, props.title));
+  })), /*#__PURE__*/React.createElement("figcaption", null, props.title)));
 }
+
+var MojoEmbed = (function (props) {
+  var className = props.className ? props.className : '';
+  var style = props.style ? props.style : {};
+  Object.assign(style, {
+    backgroundImage: "url(" + props.background + ")"
+  });
+  var aspectRatio = props.aspectRatio ? 1 / props.aspectRatio : 1 / (16 / 9);
+  return /*#__PURE__*/React.createElement("section", {
+    className: "MojoEmbed " + className,
+    style: style
+  }, /*#__PURE__*/React.createElement(reactBootstrap.Container, null, /*#__PURE__*/React.createElement(reactBootstrap.Row, null, /*#__PURE__*/React.createElement(reactBootstrap.Col, {
+    lg: {
+      offset: 1,
+      span: 10
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "frameWrapper",
+    style: {
+      paddingTop: aspectRatio * 100 + "%"
+    }
+  }, /*#__PURE__*/React.createElement("iframe", {
+    width: "100%",
+    height: "100%",
+    src: props.src,
+    frameBorder: "0",
+    allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+    allowFullScreen: true
+  }))))));
+});
 
 console.log("[ TsTheme v" + version + " ]");
 
 exports.Button = Button;
 exports.CTA = CTA;
+exports.Claim = Claim;
 exports.Code = Code;
 exports.Download = Download;
+exports.Footer = Footer;
 exports.Headline = _default$3;
-exports.HeroA = _default$5;
-exports.HeroBase = _default$4;
+exports.HeroA = _default$6;
+exports.HeroBase = _default$5;
 exports.IFrame = IFrame;
 exports.Image = _default;
+exports.ImageText = ImageText;
+exports.MojoEmbed = MojoEmbed;
 exports.NavBar = _default$1;
 exports.Section = _default$2;
 exports.Text = Text;

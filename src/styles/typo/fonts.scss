@@ -3,7 +3,6 @@
   font-family: 'Barlow', sans-serif;
 }
 
-
 @mixin font-huge {
   font-weight: 900;
   font-size: 50px;
@@ -13,6 +12,8 @@
     line-height: 110px;
   }  
 }
+.font-huge { @include font-huge; }
+
 @mixin font-h1 {
   font-weight: 900;
   font-size: 38px;
@@ -22,6 +23,8 @@
     line-height: 52px;
   }  
 }
+.font-h1 { @include font-h1; }
+
 @mixin font-h2 {
   font-weight: 900;
   font-size: 30px;
@@ -55,6 +58,30 @@
   }       
 }
 
-@mixin font-bitter {
+@mixin font2 {
   font-family: 'Bitter', serif;
+  font-weight: 400;
 }
+.font2 { @include font2; }
+
+@mixin font2-huge {
+  @include font2;
+  font-size: 22px;
+  line-height: 24px;  
+  @include media-breakpoint-up(lg) {
+    font-size: 38px;
+    line-height: 40px;  
+  }    
+}
+.font2-huge { @include font2-huge; }
+
+@mixin font2-h1 {
+  @include font2;
+  font-size: 22px;
+  line-height: 24px;  
+  @include media-breakpoint-up(lg) {
+    font-size: 30px;
+    line-height: 38px;  
+  }    
+}
+.font2-h1 { @include font2-h1; }

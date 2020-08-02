@@ -1,0 +1,35 @@
+.ImageText {
+
+  padding: 60px 0;
+
+  .firstCol {
+    display: flex;
+    @include media-breakpoint-up(lg) {
+      justify-content: center;
+    }
+  }
+  .secondCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  // Swap image and text columns
+  &.reversed {
+    .row {
+      flex-direction: row-reverse;
+    }
+  }  
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+  <html lang="">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+    <script src="mojo.0.9.0.js"></script>
+    <script src="fusion.0.9.0.js"></script>
+    </head>
+  <body>
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .mojo-element {
+    position: absolute;
+  }
+  
+  
+        #scene_booth_glitch {
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  background-color: #f5f5f5;
+}
+#guid_76a1e7e5_89d0_462e_9b25_9460ec4cc76a {
+  width: 1066px;
+  height: 600px;
+  transform: translate(-133px, 0px);
+}
+#guid_c74d34ad_9c80_4c90_a7d9_1d4144ade822 {
+  width: 56px;
+  height: 56px;
+  transform: translate(211px, 252px);
+}
+#guid_2320f008_faa0_46a2_af7b_89610fea08b8 {
+  width: 56px;
+  height: 56px;
+  transform: translate(525px, 308px);
+}
+#guid_8e6c9127_7d22_4c08_91e3_2002cba554e3 {
+  width: 154px;
+  height: 86px;
+  transform: translate(403px, 163px);
+}
+#guid_ad19bf3a_4d24_4fe4_b58f_fa3b78dcb881 {
+  width: 56px;
+  height: 56px;
+  transform: translate(372px, 135px);
+}
+
+      
+
+  </style>
+
+  
+
+        <!-- /////////////////////// -->
+        <!-- Player -->
+        <div class="wrapper" style="position: relative; width: 100%; height: 100%;">
+          <div id="player" class="fusion--player" style="width: 100%; height: 100%; background-color: #EEE;">
+            <div class="fusion--viewport">
+            
+            
+
+            
+            <div class="fusion--scene fusion--scene--default scene-scene_booth_glitch">
+              <div class="fusion--scene--content">
+                
+<div id="scene_booth_glitch" class="artboard scene" mojo-fx-magnet="{scale: 1.05}" >
+<img id="guid_76a1e7e5_89d0_462e_9b25_9460ec4cc76a" class="mojo-element" src="guid_76a1e7e5_89d0_462e_9b25_9460ec4cc76a.jpg" >
+
+<img id="guid_c74d34ad_9c80_4c90_a7d9_1d4144ade822" class="mojo-element" src="guid_c74d34ad_9c80_4c90_a7d9_1d4144ade822.png" mojo-fx-magnet mojo-fx-hand-cursor >
+
+<img id="guid_2320f008_faa0_46a2_af7b_89610fea08b8" class="mojo-element" src="guid_2320f008_faa0_46a2_af7b_89610fea08b8.png" mojo-fx-magnet mojo-fx-hand-cursor >
+
+<img id="guid_8e6c9127_7d22_4c08_91e3_2002cba554e3" class="mojo-element" src="guid_8e6c9127_7d22_4c08_91e3_2002cba554e3.png" mojo-fx-glitch-easel="{trigger: 'auto', delay: 1000, repeat: -1, repeatDelay: 2000, yoyo: true}" >
+
+<img id="guid_ad19bf3a_4d24_4fe4_b58f_fa3b78dcb881" class="mojo-element" src="guid_ad19bf3a_4d24_4fe4_b58f_fa3b78dcb881.png" mojo-fx-magnet mojo-fx-hand-cursor >
+
+</div>
+              </div>
+            </div> 
+
+
+      
+
+            </div>
+          </div>
+        </div>
+
+      
+
+  <!-- Init -->
+  <script>
+    function mojoInit() {
+      
+
+      //---
+      // Scene: scene_booth_glitch
+      (function() {
+        var tl = new TimelineMax();
+        
+        tl.call(function() {
+// Hide overflow
+$('.composition').css('overflow', 'hidden');
+
+}, {tl: tl}, null, 0);
+            
+      })();
+      
+      // var firstSceneId = mojoOld._scenes[0].id;
+      // mojoOld.getScene(firstSceneId).element.style.visibility = "visible";
+      // mojoOld.emit('ready', {mojo: mojoOld});
+    }
+
+    setTimeout(mojoInit, 200);
+  </script>
+
+  <!-- Mojo Custom Scripts -->
+  <script>
+    
+  </script>
+
+  <!-- Mojo/Fusion Player -->
+  <script>
+    
+        document.addEventListener('DOMContentLoaded', function () {
+          window.player = new fusion.Player({
+            id: 'player',
+            // debug: true, 
+            scenes: [
+              
+              { 
+                id: 'scene_booth_glitch', 
+                type: 'flat', 
+                width: 800, 
+                height: 600,
+                fit: true, 
+                center: true,
+                plugins: [
+                  // {id: 'visualDebugger', options: {centerV: true}},
+                ]
+              },              
+        
+            ]
+          });
+          player.loadScene('scene_booth_glitch');      
+        });
+      
+  </script>
+
+
+
+
+  
+  <!-- Responsive Iframe Scaling -->
+  <script>
+    //   //---
+    //   // IFrame auto size
+    //   var iframe = window.frameElement;
+    //   var maxHeight;
+    //   function adjustFrame() {
+    //     var availableWidth = iframe.clientWidth;
+    //     console.log('availableWidth:', availableWidth);
+    //     console.log('maxHeight:', maxHeight);
+
+    //     var scale = Math.min(availableWidth / contentWidth, maxHeight / contentHeight);
+    //     scale = (scale > 1) ? 1 : scale;
+    //     var newWidth = contentWidth * scale;
+    //     var newHeight = contentHeight * scale;
+
+    //     console.log('> newWidth: ', newWidth);
+    //     console.log('> newHeight: ', newHeight);
+
+    //     iframe.setAttribute('height', newHeight);
+    //     iframe.style.display = 'block';
+    //   }
+
+    //   if (iframe) {
+    //     console.log('');
+    //     console.log('iframe detected');
+    //     maxHeight = iframe.getAttribute('height');
+    //   }
+
+    //   function onResize() {
+    //     if (iframe) adjustFrame();
+    //     fit();
+    //   }
+    //   window.addEventListener('resize', onResize);
+    //   onResize();
+
+    // })();
+  </script>
+
+  <script src="index.preview.js"></script>
+
+</body>

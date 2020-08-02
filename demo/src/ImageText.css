@@ -1,0 +1,27 @@
+.ImageText .firstCol {
+  display: flex;
+  justify-content: center; }
+
+.ImageText .secondCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.ImageText .image {
+  display: inline-block;
+  min-width: 100px;
+  min-height: 100px;
+  width: 400px;
+  height: 400px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.ImageText.reversed .row {
+  flex-direction: row-reverse; }
+
+.ImageText.reversed .firstCol {
+  text-align: left; }
+
+.ImageText.reversed .secondCol {
+  text-align: right; }

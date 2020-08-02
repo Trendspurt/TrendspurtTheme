@@ -1,4 +1,9 @@
 .Button {
+  // Force line break
+  &::before {
+    content: "\A";
+  }
+  display: inline-block;
   margin: 20px 0;
   button {
     display: flex;
