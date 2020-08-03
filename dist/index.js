@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.9";
+var version = "1.3.10";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -424,7 +424,7 @@ var Claim = (function (props) {
     }
   }, /*#__PURE__*/React.createElement("h1", {
     className: "font2-h1"
-  }, props.title), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("p", {
+  }, props.title), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("div", {
     className: "font-h1",
     style: {
       fontWeight: 'normal'

@@ -13,7 +13,7 @@ export default (props) => {
           <Col lg={{offset: 1, span: 10}}>
             <h1 className="font2-h1">{props.title}</h1>
             <hr />
-            <p className="font-h1" style={{fontWeight: 'normal'}}>{props.children}</p>
+            <div className="font-h1" style={{fontWeight: 'normal'}}>{props.children}</div>
           </Col>
         </Row>      
       </Container>
