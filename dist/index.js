@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.7";
+var version = "1.3.8";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -409,6 +409,7 @@ var _default$6 = /*#__PURE__*/function (_React$Component) {
 
 var Claim = (function (props) {
   var className = props.className ? props.className : '';
+  className += props.inverted ? 'inverted' : '';
   var style = props.style ? props.style : {};
   Object.assign(style, {
     backgroundImage: "url(" + props.background + ")"
