@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;700;900&family=Bitter:ital,wght@0,400;0,700;1,400&family=Gamja+Flower&display=swap');
+
+
+@mixin font-default {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+    line-height: 32px;
+  }       
+}
+
 * {
   font-family: 'Barlow', sans-serif;
+  @include font-default();
 }
 
 @mixin font-huge {
@@ -34,6 +47,8 @@
     line-height: 44px;
   }    
 }
+.font-h2 { @include font-h2; }
+
 @mixin font-h3 {
   font-weight: 900;
   font-size: 22px;
@@ -43,20 +58,15 @@
     line-height: 34px;
   }      
 }
+.font-h3 { @include font-h3; }
+
 @mixin font-h4 {
   font-weight: 900;
   font-size: 24px;
   line-height: 30px;
 }
-@mixin font-default {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 30px;
-  @include media-breakpoint-up(lg) {
-    font-size: 24px;
-    line-height: 32px;
-  }       
-}
+.font-h4 { @include font-h4; }
+
 
 @mixin font2 {
   font-family: 'Bitter', serif;

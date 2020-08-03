@@ -21,7 +21,7 @@ export default (props) => {
             </div>
           </Col>
           <Col lg={props.reversed ? {offset: 0, span: 5} : {offset: 1, span: 5}} className="secondCol">
-            <h1 className="font2-h1">{Helper.getSlot(props, 'title')}</h1>
+            <h2 className="font-h2">{Helper.getSlot(props, 'title')}</h2>
             <div>{Helper.getSlot(props, 'body')}</div>
           </Col>
         </Row>      
