@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.10";
+var version = "1.3.11";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -176,7 +176,7 @@ var _default$1 = /*#__PURE__*/function (_React$Component) {
       className: "ml-auto mr-auto"
     }, this.props.items), /*#__PURE__*/React.createElement(reactBootstrap.Form, {
       inline: true
-    }, /*#__PURE__*/React.createElement(Button, null, "Login")))));
+    }))));
   };
 
   return _default;

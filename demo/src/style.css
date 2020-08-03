@@ -7274,16 +7274,14 @@ body {
   .ImageText .secondCol {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 30px;
-    padding-bottom: 20px; }
+    justify-content: center; }
   .ImageText .image {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 15px;
     bottom: 0;
-    left: 0;
-    background-position: center center;
+    left: 15px;
+    background-position: center 0;
     background-repeat: no-repeat;
     background-size: contain; }
   .ImageText.reversed .row {
@@ -7467,10 +7465,14 @@ body {
     background-position: 50% 50%;
     background-repeat: no-repeat; }
   .NavBar .navbar-nav {
+    width: 100%;
     display: flex;
-    justify-content: space-evenly; }
+    justify-content: flex-end;
+    align-items: flex-end; }
     .NavBar .navbar-nav .nav-link {
-      padding: 0 12px; }
+      padding: 0 12px;
+      font-size: 18px;
+      color: white; }
     @media (max-width: 990px) {
       .NavBar .navbar-nav {
         padding-top: 20px;

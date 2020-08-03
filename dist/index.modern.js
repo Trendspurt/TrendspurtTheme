@@ -5,7 +5,7 @@ import { Navbar, Container, Nav, Form, Row, Col } from 'react-bootstrap';
 import Container$1 from 'react-bootstrap/Container';
 import 'react-bootstrap/Button';
 
-var version = "1.3.10";
+var version = "1.3.11";
 
 var Version = (() => {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -156,7 +156,7 @@ class NavBar extends React.Component {
       className: "ml-auto mr-auto"
     }, this.props.items), /*#__PURE__*/React.createElement(Form, {
       inline: true
-    }, /*#__PURE__*/React.createElement(Button, null, "Login")))));
+    }))));
   }
 
 }

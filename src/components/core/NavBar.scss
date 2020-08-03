@@ -14,11 +14,16 @@
   }
 
   .navbar-nav {
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+    justify-content: flex-end;
+    align-items: flex-end;
 
     .nav-link {
       padding: 0 12px;
+      font-size: 18px;
+      color: white
     }
     @media (max-width: 990px) {
       padding-top: 20px;
