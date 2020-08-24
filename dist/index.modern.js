@@ -5,7 +5,7 @@ import { Navbar, Container, Nav, Form, Row, Col } from 'react-bootstrap';
 import Container$1 from 'react-bootstrap/Container';
 import 'react-bootstrap/Button';
 
-var version = "1.3.13";
+var version = "1.3.14";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -199,6 +199,27 @@ var _default$2 = /*#__PURE__*/function (_React$Component) {
   var _proto = _default.prototype;
 
   _proto.render = function render() {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "Spacer",
+      style: {
+        height: (this.props.height ? this.props.height : 40) + 'px'
+      }
+    });
+  };
+
+  return _default;
+}(React.Component);
+
+var _default$3 = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(_default, _React$Component);
+
+  function _default(props) {
+    return _React$Component.call(this, props) || this;
+  }
+
+  var _proto = _default.prototype;
+
+  _proto.render = function render() {
     return /*#__PURE__*/React.createElement("section", {
       className: "Section"
     }, /*#__PURE__*/React.createElement(Container$1, null, this.props.children));
@@ -207,7 +228,7 @@ var _default$2 = /*#__PURE__*/function (_React$Component) {
   return _default;
 }(React.Component);
 
-var _default$3 = /*#__PURE__*/function (_React$Component) {
+var _default$4 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
@@ -263,7 +284,7 @@ var Text = (function (props) {
   }, props.children);
 });
 
-var _default$4 = /*#__PURE__*/function () {
+var _default$5 = /*#__PURE__*/function () {
   function _default() {}
 
   _default.getSlot = function getSlot(props, id) {
@@ -303,7 +324,7 @@ var ImageText = (function (props) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "image",
     style: {
-      backgroundImage: "url(" + _default$4.getSlot(props, 'image') + ")"
+      backgroundImage: "url(" + _default$5.getSlot(props, 'image') + ")"
     }
   }))), /*#__PURE__*/React.createElement(Col, {
     lg: props.reversed ? {
@@ -316,10 +337,10 @@ var ImageText = (function (props) {
     className: "secondCol"
   }, /*#__PURE__*/React.createElement("h2", {
     className: "font-h2"
-  }, _default$4.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, _default$4.getSlot(props, 'body'))))));
+  }, _default$5.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, _default$5.getSlot(props, 'body'))))));
 });
 
-var _default$5 = /*#__PURE__*/function (_React$Component) {
+var _default$6 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
@@ -359,7 +380,7 @@ var _default$5 = /*#__PURE__*/function (_React$Component) {
   return _default;
 }(React.Component);
 
-var _default$6 = /*#__PURE__*/function (_React$Component) {
+var _default$7 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
@@ -477,5 +498,5 @@ var MojoEmbed = (function (props) {
 
 console.log("[ TsTheme v" + version + " ]");
 
-export { Button, CTA, Claim, Code, Download, Footer, _default$3 as Headline, _default$6 as HeroA, _default$5 as HeroBase, IFrame, _default as Image, ImageText, MojoEmbed, _default$1 as NavBar, _default$2 as Section, Text, Version, Video, YouTube };
+export { Button, CTA, Claim, Code, Download, Footer, _default$4 as Headline, _default$7 as HeroA, _default$6 as HeroBase, IFrame, _default as Image, ImageText, MojoEmbed, _default$1 as NavBar, _default$3 as Section, _default$2 as Spacer, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map
