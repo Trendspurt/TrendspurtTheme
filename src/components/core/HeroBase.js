@@ -13,7 +13,7 @@ export default class extends React.Component {
   render() {
     return (
       <Container fluid className={"HeroBase "+this.className} style={this.style}>
-       
+
         <div className="backdrop1" style={this.backdrop1Style}></div>
 
         <Container>
