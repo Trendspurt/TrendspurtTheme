@@ -7488,23 +7488,21 @@ body {
   background-color: #282C31;
   color: #FFFFFF; }
 
-.YouTube {
-  padding: 80px 0; }
-  .YouTube .frameWrapper {
-    position: relative;
-    padding-top: 56.25%;
-    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */ }
-    .YouTube .frameWrapper iframe {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 12px;
-      border: 3px solid #000; }
-  .YouTube figcaption {
-    margin-top: 20px;
-    text-align: center;
-    font-family: 'Bitter', serif;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.5); }
+.YouTube .frameWrapper {
+  position: relative;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */ }
+  .YouTube .frameWrapper iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 12px;
+    border: 3px solid #000; }
+
+.YouTube figcaption {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Bitter', serif;
+  font-weight: 400; }
