@@ -17,10 +17,11 @@
     
     .label {
       flex: 1 1 100px;
-      padding: 4px 30px;
+      padding: 6px 30px;
       @include font-default;
       font-weight: 700;
-      text-transform: uppercase;
+      // text-transform: uppercase;
+      transition: 200ms;
     }
 
     .icon {
@@ -34,7 +35,13 @@
 
     &:focus {outline:0;}
     &:hover {
-      transform: scale(1.03);
+      // transform: scale(1.03);
+      .label {
+        letter-spacing: 1px;
+      }
+      .icon {
+        // filter: invert(1);
+      }
     }
   }
 

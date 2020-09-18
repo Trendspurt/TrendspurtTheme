@@ -7316,7 +7316,7 @@ body {
     padding: 60px 0;
     flex: 1 1 100%; }
     .HeroBase .row .Headline .metaTitle {
-      color: #E4004C; }
+      color: #FFFFFF; }
     .HeroBase .row .Headline h1, .HeroBase .row .Headline .subTitle {
       color: #FFFFFF; }
 
@@ -7434,12 +7434,12 @@ body {
     box-shadow: 0px 0px 30px 0px rgba(0, 226, 182, 0.6); }
     .Button button .label {
       flex: 1 1 100px;
-      padding: 4px 30px;
+      padding: 6px 30px;
       font-weight: 400;
       font-size: 22px;
       line-height: 30px;
       font-weight: 700;
-      text-transform: uppercase; }
+      transition: 200ms; }
       @media (min-width: 992px) {
         .Button button .label {
           font-size: 24px;
@@ -7452,8 +7452,8 @@ body {
       background-size: contain; }
     .Button button:focus {
       outline: 0; }
-    .Button button:hover {
-      transform: scale(1.03); }
+    .Button button:hover .label {
+      letter-spacing: 1px; }
 
 .NavBar {
   z-index: 99;
@@ -7488,24 +7488,22 @@ body {
   background-color: #282C31;
   color: #FFFFFF; }
 
-.YouTube {
-  background-color: #282C31;
-  padding: 80px 0; }
-  .YouTube .frameWrapper {
-    position: relative;
-    padding-top: 56.25%;
-    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */ }
-    .YouTube .frameWrapper iframe {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      border-radius: 12px;
-      border: 3px solid #000; }
-  .YouTube figcaption {
-    margin-top: 20px;
-    text-align: center;
-    font-family: 'Bitter', serif;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.5); }
+.YouTube .frameWrapper {
+  position: relative;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */ }
+  .YouTube .frameWrapper iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 12px;
+    border: 3px solid #000; }
+
+.YouTube figcaption {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  opacity: 0.5; }

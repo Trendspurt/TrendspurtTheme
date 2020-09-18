@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.17";
+var version = "1.3.18";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -126,7 +126,9 @@ var Button = (function (props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "Button " + className,
     style: style
-  }, /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: props.onClick
+  }, /*#__PURE__*/React.createElement("div", {
     className: "label"
   }, props.children), /*#__PURE__*/React.createElement("div", {
     className: "icon"
@@ -230,13 +232,57 @@ var _default$3 = /*#__PURE__*/function (_React$Component) {
   return _default;
 }(React.Component);
 
-var _default$4 = /*#__PURE__*/function (_React$Component) {
+var _default$4 = /*#__PURE__*/function () {
+  function _default() {}
+
+  _default.getSlot = function getSlot(props, id) {
+    if (props.children instanceof Array) {
+      var children = props.children.find(function (item) {
+        return item.type === id;
+      }).props.children;
+      return children;
+    }
+
+    return false;
+  };
+
+  _default.getSlots = function getSlots(props, slots) {
+    if (!(props.children instanceof Array)) return {};
+    var result = {};
+    slots.forEach(function (id) {
+      var child = props.children.find(function (item) {
+        return item.type === id;
+      });
+      result[id] = child.props.children;
+    });
+    return result;
+  };
+
+  _default.childrenWithoutSlots = function childrenWithoutSlots(props, slots) {
+    if (!(props.children instanceof Array)) return props.children;
+    var children = React.Children.toArray(props.children);
+    slots.forEach(function (id) {
+      var child = props.children.find(function (item) {
+        return item.type === id;
+      });
+      children.splice(1, 1);
+    });
+    return children;
+  };
+
+  return _default;
+}();
+
+var _default$5 = /*#__PURE__*/function (_React$Component) {
   _inheritsLoose(_default, _React$Component);
 
   function _default(props) {
     var _this;
 
     _this = _React$Component.call(this, props) || this;
+    _this.props = props;
+    _this.slotNames = ['meta'];
+    _this.slots = _default$4.getSlots(props, _this.slotNames);
     _this.className = '';
 
     switch (props.type) {
@@ -269,9 +315,9 @@ var _default$4 = /*#__PURE__*/function (_React$Component) {
       style: this.style
     }, this.props.metaTitle ? /*#__PURE__*/React.createElement("div", {
       className: "metaTitle"
-    }, this.props.metaTitle) : '', /*#__PURE__*/React.createElement(this.tag, null, this.props.children), this.props.subTitle ? /*#__PURE__*/React.createElement("div", {
+    }, this.props.metaTitle) : '', /*#__PURE__*/React.createElement(this.tag, null, _default$4.childrenWithoutSlots(this.props, this.slotNames)), this.props.subTitle ? /*#__PURE__*/React.createElement("div", {
       className: "subTitle"
-    }, this.props.subTitle) : '');
+    }, this.props.subTitle) : '', /*#__PURE__*/React.createElement("hr", null), this.slots.meta);
   };
 
   return _default;
@@ -285,18 +331,6 @@ var Text = (function (props) {
     style: style
   }, props.children);
 });
-
-var _default$5 = /*#__PURE__*/function () {
-  function _default() {}
-
-  _default.getSlot = function getSlot(props, id) {
-    return props.children.find(function (item) {
-      return item.type === id;
-    }).props.children;
-  };
-
-  return _default;
-}();
 
 var ImageText = (function (props) {
   var className = props.className ? props.className : '';
@@ -326,7 +360,7 @@ var ImageText = (function (props) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "image",
     style: {
-      backgroundImage: "url(" + _default$5.getSlot(props, 'image') + ")"
+      backgroundImage: "url(" + _default$4.getSlot(props, 'image') + ")"
     }
   }))), /*#__PURE__*/React.createElement(reactBootstrap.Col, {
     lg: props.reversed ? {
@@ -339,7 +373,7 @@ var ImageText = (function (props) {
     className: "secondCol"
   }, /*#__PURE__*/React.createElement("h2", {
     className: "font-h2"
-  }, _default$5.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, _default$5.getSlot(props, 'body'))))));
+  }, _default$4.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, _default$4.getSlot(props, 'body'))))));
 });
 
 var _default$6 = /*#__PURE__*/function (_React$Component) {
@@ -506,7 +540,7 @@ exports.Claim = Claim;
 exports.Code = Code;
 exports.Download = Download;
 exports.Footer = Footer;
-exports.Headline = _default$4;
+exports.Headline = _default$5;
 exports.HeroA = _default$7;
 exports.HeroBase = _default$6;
 exports.IFrame = IFrame;
