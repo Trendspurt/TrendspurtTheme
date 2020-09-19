@@ -1,8 +1,8 @@
 import React from 'react';
 import Button$1 from '@material-ui/core/Button';
 import GetAppIcon from '@material-ui/icons/GetApp';
-import { Navbar, Container, Nav, Form, Row, Col } from 'react-bootstrap';
-import Container$1 from 'react-bootstrap/Container';
+import { Navbar, Container as Container$1, Nav, Form, Row, Col } from 'react-bootstrap';
+import Container$2 from 'react-bootstrap/Container';
 import 'react-bootstrap/Button';
 
 var version = "1.3.18";
@@ -107,6 +107,44 @@ function Code(props) {
   })));
 }
 
+class Helper {
+  static getSlot(props, id) {
+    if (props.children instanceof Array) {
+      let child = props.children.find(item => item.type === id);
+      return child ? child.props.children : null;
+    }
+
+    return;
+  }
+
+  static getSlots(props, slots) {
+    if (!(props.children instanceof Array)) return props;
+    const result = {};
+    slots.forEach(id => {
+      let child = props.children.find(item => item.type === id);
+      result[id] = child ? child.props.children : props[id];
+    });
+    return result;
+  }
+
+  static childrenWithoutSlots(props, slots) {
+    if (!(props.children instanceof Array)) return props.children;
+    let children = React.Children.toArray(props.children);
+    slots.forEach(id => {
+      let child = children.find(item => item.type === id);
+      child && children.splice(children.indexOf(child), 1);
+    });
+    return children;
+  }
+
+}
+
+function SlotDemo(props) {
+  const slotNames = ['xxx'];
+  const slots = Helper.getSlots(props, slotNames);
+  return /*#__PURE__*/React.createElement("div", null, Helper.childrenWithoutSlots(props, slotNames), /*#__PURE__*/React.createElement("hr", null), slots.xxx);
+}
+
 var Button = (props => {
   const className = props.className ? props.className : '';
   const style = props.style ? props.style : {};
@@ -143,7 +181,7 @@ class NavBar extends React.Component {
       bg: "dark",
       variant: "dark",
       expand: "lg"
-    }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(Navbar.Brand, {
+    }, /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement(Navbar.Brand, {
       href: "/",
       style: {
         width: this.brand.width,
@@ -196,39 +234,7 @@ class Section extends React.Component {
   render() {
     return /*#__PURE__*/React.createElement("section", {
       className: "Section"
-    }, /*#__PURE__*/React.createElement(Container$1, null, this.props.children));
-  }
-
-}
-
-class Helper {
-  static getSlot(props, id) {
-    if (props.children instanceof Array) {
-      let children = props.children.find(item => item.type === id).props.children;
-      return children;
-    }
-
-    return false;
-  }
-
-  static getSlots(props, slots) {
-    if (!(props.children instanceof Array)) return {};
-    const result = {};
-    slots.forEach(id => {
-      let child = props.children.find(item => item.type === id);
-      result[id] = child.props.children;
-    });
-    return result;
-  }
-
-  static childrenWithoutSlots(props, slots) {
-    if (!(props.children instanceof Array)) return props.children;
-    let children = React.Children.toArray(props.children);
-    slots.forEach(id => {
-      let child = props.children.find(item => item.type === id);
-      children.splice(1, 1);
-    });
-    return children;
+    }, /*#__PURE__*/React.createElement(Container$2, null, this.props.children));
   }
 
 }
@@ -236,9 +242,8 @@ class Helper {
 class Headline extends React.Component {
   constructor(props) {
     super(props);
-    this.props = props;
-    this.slotNames = ['meta'];
-    this.slots = Helper.getSlots(props, this.slotNames);
+    this.slotNames = ['meta', 'sub'];
+    this.slots = Helper.getSlots(this.props, this.slotNames);
     this.className = '';
 
     switch (props.type) {
@@ -266,11 +271,11 @@ class Headline extends React.Component {
     return /*#__PURE__*/React.createElement("div", {
       className: "Headline " + this.className,
       style: this.style
-    }, this.props.metaTitle ? /*#__PURE__*/React.createElement("div", {
+    }, this.props.uid, this.slots.meta ? /*#__PURE__*/React.createElement("div", {
       className: "metaTitle"
-    }, this.props.metaTitle) : '', /*#__PURE__*/React.createElement(this.tag, null, Helper.childrenWithoutSlots(this.props, this.slotNames)), this.props.subTitle ? /*#__PURE__*/React.createElement("div", {
+    }, this.slots.meta) : '', /*#__PURE__*/React.createElement(this.tag, null, Helper.childrenWithoutSlots(this.props, this.slotNames)), this.slots.sub ? /*#__PURE__*/React.createElement("div", {
       className: "subTitle"
-    }, this.props.subTitle) : '', /*#__PURE__*/React.createElement("hr", null), this.slots.meta);
+    }, this.slots.sub) : '');
   }
 
 }
@@ -295,7 +300,7 @@ var ImageText = (props => {
   return /*#__PURE__*/React.createElement("section", {
     className: "ImageText " + className,
     style: style
-  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
+  }, /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
     lg: props.reversed ? {
       offset: 1,
       span: 6
@@ -325,7 +330,7 @@ var ImageText = (props => {
     className: "secondCol"
   }, /*#__PURE__*/React.createElement("h2", {
     className: "font-h2"
-  }, Helper.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, Helper.getSlot(props, 'body'))))));
+  }, Helper.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, Helper.getSlot(props, 'body')), /*#__PURE__*/React.createElement("div", null, Helper.getSlot(props, 'murx'))))));
 });
 
 class HeroBase extends React.Component {
@@ -343,14 +348,14 @@ class HeroBase extends React.Component {
   }
 
   render() {
-    return /*#__PURE__*/React.createElement(Container, {
+    return /*#__PURE__*/React.createElement(Container$1, {
       fluid: true,
       className: "HeroBase " + this.className,
       style: this.style
     }, /*#__PURE__*/React.createElement("div", {
       className: "backdrop1",
       style: this.backdrop1Style
-    }), /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
+    }), /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
       lg: {
         offset: 0,
         span: 12
@@ -371,7 +376,7 @@ class HeroA extends React.Component {
   }
 
   render() {
-    return /*#__PURE__*/React.createElement(Container$1, {
+    return /*#__PURE__*/React.createElement(Container$2, {
       fluid: true,
       className: "HeroA",
       style: this.style
@@ -408,7 +413,7 @@ var Claim = (props => {
   return /*#__PURE__*/React.createElement("section", {
     className: "Claim " + className,
     style: style
-  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
+  }, /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
     lg: {
       offset: 1,
       span: 10
@@ -426,7 +431,7 @@ var Claim = (props => {
 function YouTube(props) {
   return /*#__PURE__*/React.createElement("figure", {
     className: "YouTube"
-  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement("div", {
     className: "frameWrapper"
   }, /*#__PURE__*/React.createElement("iframe", {
     width: "100%",
@@ -448,7 +453,7 @@ var MojoEmbed = (props => {
   return /*#__PURE__*/React.createElement("section", {
     className: "MojoEmbed " + className,
     style: style
-  }, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
+  }, /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
     lg: {
       offset: 1,
       span: 10
@@ -468,7 +473,16 @@ var MojoEmbed = (props => {
   }))))));
 });
 
+var Container = (props => {
+  const className = props.className ? props.className : '';
+  const style = props.style ? props.style : {};
+  return /*#__PURE__*/React.createElement("div", {
+    className: "container " + className,
+    style: style
+  }, props.children);
+});
+
 console.log(`[ TsTheme v${version} ]`);
 
-export { Button, CTA, Claim, Code, Download, Footer, Headline, HeroA, HeroBase, IFrame, Image, ImageText, MojoEmbed, NavBar, Section, Spacer, Text, Version, Video, YouTube };
+export { Button, CTA, Claim, Code, Container, Download, Footer, Headline, HeroA, HeroBase, IFrame, Image, ImageText, MojoEmbed, NavBar, Section, SlotDemo, Spacer, Text, Version, Video, YouTube };
 //# sourceMappingURL=index.modern.js.map

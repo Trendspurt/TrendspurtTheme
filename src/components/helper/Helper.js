@@ -1,6 +1,10 @@
 import React from "react"
 
 /**
+ * DEPRECATED (use getSlots() and childrenWithoutSlots())
+ * DEPRECATED (use getSlots() and childrenWithoutSlots())
+ * DEPRECATED (use getSlots() and childrenWithoutSlots())
+ * DEPRECATED (use getSlots() and childrenWithoutSlots())
  * Component Helper Functions (by Simon Widjaja)
  */
 export default class {
@@ -11,22 +15,24 @@ export default class {
    */
   static getSlot(props, id) {
     if (props.children instanceof Array) {
-      let children = props.children.find(item => item.type === id).props.children
-      return children
+      let child = props.children.find(item => item.type === id)
+      return child ? child.props.children : null
     }
-    return false;
+    return;
   }
 
+  ////////////////////////////////////////////////////
+  // Slots
+  ////////////////////////////////////////////////////
+
   static getSlots(props, slots) {
-    if (!(props.children instanceof Array)) return {};
+    if (!(props.children instanceof Array)) return props;
     // Extract slot contents
     const result = {}
     slots.forEach(id => {
       let child = props.children.find(item => item.type === id)
-      result[id] = child.props.children;
+      result[id] = child ? child.props.children : props[id];
     });
-
-    
     return result;
   }
 
@@ -36,8 +42,8 @@ export default class {
     let children = React.Children.toArray(props.children);
     // Remove slots
     slots.forEach(id => {
-      let child = props.children.find(item => item.type === id)
-      children.splice( 1, 1 )
+      let child = children.find(item => item.type === id)
+      child && children.splice( children.indexOf(child), 1 )
     })
     return children;
   }

@@ -7479,6 +7479,8 @@ body {
         align-items: center; }
         .NavBar .navbar-nav .nav-link {
           padding: 10px 0; } }
+    .NavBar .navbar-nav .dropdown .dropdown-menu a {
+      color: black; }
   .NavBar .Button {
     margin: 0;
     transform: scale(0.6); }
@@ -7486,7 +7488,11 @@ body {
 .Footer {
   padding: 40px;
   background-color: #282C31;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  font-size: 16px;
+  color: white; }
+  .Footer a {
+    color: white; }
 
 .YouTube .frameWrapper {
   position: relative;

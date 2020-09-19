@@ -1,12 +1,11 @@
 import React from "react"
-import Helper from '../helper/Helper'
+import Helper from '../helper/Helper';
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.props = props;
-    this.slotNames = ['meta'];
-    this.slots = Helper.getSlots(props, this.slotNames);
+    this.slotNames = ['meta', 'sub']
+    this.slots = Helper.getSlots(this.props, this.slotNames);    
 
     this.className = '';
     switch(props.type) {
@@ -29,13 +28,13 @@ export default class extends React.Component {
   render() {
     return (
       <div className={"Headline "+this.className} style={this.style}>
-        {this.props.metaTitle ? <div className="metaTitle">{this.props.metaTitle}</div> : ''}
+        {this.props.uid}
+        {/* {this.props.metaTitle ? <div className="metaTitle">{this.props.metaTitle}</div> : ''} */}
+        {this.slots.meta ? <div className="metaTitle">{this.slots.meta }</div> : ''}
+        {/* <this.tag>{this.props.children}</this.tag> */}
         <this.tag>{Helper.childrenWithoutSlots(this.props, this.slotNames)}</this.tag>
-        {this.props.subTitle ? <div className="subTitle">{this.props.subTitle}</div> : ''}
-        
-        <hr></hr>
-        {this.slots.meta}
-        {/* {Helper.getSlot(this.props, 'meta')} */}
+        {/* {this.props.subTitle ? <div className="subTitle">{this.props.subTitle}</div> : ''} */}
+        {this.slots.sub ? <div className="subTitle">{this.slots.sub}</div> : ''}
       </div>
     );
   }

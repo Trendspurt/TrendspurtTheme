@@ -9,6 +9,7 @@ export {default as Download} from './components/wip/Download'
 export {default as Video} from './components/wip/Video'
 export {default as IFrame} from './components/wip/IFrame'
 export {default as Code} from './components/wip/Code'
+export {default as SlotDemo} from './components/wip/SlotDemo'
 
 // Core 
 export {default as NavBar} from './components/core/NavBar'
@@ -24,3 +25,4 @@ export {default as HeroA} from './components/core/HeroA'
 export {default as Claim} from './components/core/Claim'
 export {default as YouTube} from './components/core/YouTube'
 export {default as MojoEmbed} from './components/core/MojoEmbed'
+export {default as Container} from './components/core/Container'

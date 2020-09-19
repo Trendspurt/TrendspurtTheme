@@ -22,6 +22,7 @@ import {
   Footer,
   MojoEmbed,
   ImageText,
+  SlotDemo,
 } from 'trendspurt-theme'
 // import 'trendspurt-theme/dist/index.css'
 
@@ -39,7 +40,7 @@ const App = () => {
       <NavDropdown.Item href="#action/3.2" key="992">Another action</NavDropdown.Item>,
       <NavDropdown.Item href="#action/3.3" key="993">Something</NavDropdown.Item>,
       <NavDropdown.Divider key="994" />,
-      <NavDropdown.Item href="#action/3.4" key="994">Separated link</NavDropdown.Item>,
+      <NavDropdown.Item href="#action/3.4" key="995">Separated link</NavDropdown.Item>,
       ]}
     </NavDropdown>
   ];
@@ -51,12 +52,64 @@ const App = () => {
       <NavBar brand={{image: "demo/images/brand_mojo.svg"}}
               items={navItems}></NavBar>
 
-      <HeroBase title="Mojo for Adobe XD"
+      {/* <HeroBase title="Mojo for Adobe XD"
              background="demo/images/HeroA_bg.jpg"
              backdrop1="demo/images/HeroA_backdrop.png">
         <Headline type="huge" metaTitle="meta title" subTitle="I am a nice sub title">Phoenix Design System</Headline>
         <Button>Download Now</Button>
-      </HeroBase>
+      </HeroBase> */}
+
+
+
+      <Container>
+        <div style={{backgroundColor: 'gold'}}>
+
+          {/* <SlotDemo meta="Meta Attribute" sub="Subtext">
+            Regular content
+          </SlotDemo>
+
+          <SlotDemo>
+            Regular content 233
+            <xxx>xxx Slot</xxx>
+            <div slot="meta">Meta slot</div>
+          </SlotDemo> */}
+
+          <h1>Headlines</h1>
+
+          <Headline uid="one" type="h1" meta="Meta Attribute" subTitle="Sub Attribute">
+            Murx saddasd asda
+            I am a Headline with slots (h1)
+          </Headline>
+          
+          <hr/>
+
+          <Headline uid="three" type="h1">
+            BEFORE-
+            <meta>Meta Slot</meta>
+            <subTitle>Sub Slot</subTitle>
+            -AFTER
+          </Headline>
+          
+          <hr/>
+          <hr/>
+
+          <Headline uid="chaos1" type="h1" meta="Meta Atrr">
+            BEFORE-
+            <subTitle>Sub Slot</subTitle>
+            -AFTER
+          </Headline>
+
+         
+          <hr/>
+
+          <Headline uid="chaos2" type="h1" subTitle="Sub Attr">
+            BEFORE-
+            <meta>Meta Slot</meta>
+            -AFTER
+          </Headline>          
+        </div>
+      </Container>
+
 
       <YouTube id="i6952GF3pdI" title="This YouTube video shows the example composition in action" />
 
@@ -109,8 +162,8 @@ const App = () => {
       </ImageText>
 
 
-      <MojoEmbed src="demo/mojoDemos/DummyDemo/index.html" aspectRatio={800/600}></MojoEmbed>
-      <MojoEmbed src="demo/mojoDemos/DummyDemo/index.html"></MojoEmbed>
+      {/* <MojoEmbed src="demo/mojoDemos/DummyDemo/index.html" aspectRatio={800/600}></MojoEmbed>
+      <MojoEmbed src="demo/mojoDemos/DummyDemo/index.html"></MojoEmbed> */}
 
       <Claim title="Use Mojo for" background="demo/images/Claim_bg_shapes.png">
         <strong>RICH PROTOTYPING</strong> / <strong><nobr>WEB EXPORT</nobr></strong> / <strong><nobr>RICH CONTENT</nobr></strong> / UI ANIMATIONS / STORYTELLING / SCRIPTING / INTERACTIVE INFOGRAPHICS / BANNERS / CONFIGURATORS / ...
@@ -124,17 +177,6 @@ const App = () => {
       <Claim title="Use Mojo for" background="demo/images/Claim_bg_shapes.png" inverted>
         <strong>RICH PROTOTYPING</strong> / <strong><nobr>WEB EXPORT</nobr></strong> / <strong><nobr>RICH CONTENT</nobr></strong> / UI ANIMATIONS / STORYTELLING / SCRIPTING / INTERACTIVE INFOGRAPHICS / BANNERS / CONFIGURATORS / ...
       </Claim>
-
-
-      <Container>
-        <Headline type="h1">
-          Murx saddasd asda
-          <meta>META</meta>
-          I am a Headline with slots (h1)
-        </Headline>
-        <Text>v2 Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
-        <Text>Mojo is a powerful plugin for Adobe XD to create expressive animated and interactive content at the speed of thought. It comes with dozens of ready-to-use effects and triggers that don't require any code knowledge. But if needed Mojo is super code friendly and features several options to enleash even more creative power with small code snippets.</Text>
-      </Container>
 
       <Container>
         <Headline type="h1">I am a Headline (h1)</Headline>
