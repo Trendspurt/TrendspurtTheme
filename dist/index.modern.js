@@ -5,7 +5,7 @@ import { Navbar, Container as Container$1, Nav, Form, Row, Col } from 'react-boo
 import Container$2 from 'react-bootstrap/Container';
 import 'react-bootstrap/Button';
 
-var version = "1.3.20";
+var version = "1.3.21";
 
 var Version = (() => {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
