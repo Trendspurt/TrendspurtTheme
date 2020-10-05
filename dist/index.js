@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container$1 = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.19";
+var version = "1.3.20";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -339,7 +339,7 @@ var Text = (function (props) {
 
 var ImageText = (function (props) {
   var className = props.className ? props.className : '';
-  className += props.reversed ? 'reversed' : '';
+  className += props.reversed ? ' reversed' : '';
   var style = props.style ? props.style : {};
   Object.assign(style, {
     backgroundImage: "url(" + props.background + ")"
@@ -541,9 +541,61 @@ var Container = (function (props) {
   var className = props.className ? props.className : '';
   var style = props.style ? props.style : {};
   return /*#__PURE__*/React.createElement("div", {
-    className: "container " + className,
+    className: "container Container " + className,
     style: style
   }, props.children);
+});
+
+var TextVideo = (function (props) {
+  var className = props.className ? props.className : '';
+  className += props.reversed ? ' reversed' : '';
+  return /*#__PURE__*/React.createElement("div", {
+    className: "TextVideo " + className
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrapper"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "text-col"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "meta"
+  }, props.meta), /*#__PURE__*/React.createElement("h1", {
+    className: "title"
+  }, props.title), /*#__PURE__*/React.createElement("h2", {
+    className: "subtitle"
+  }, props.sub), /*#__PURE__*/React.createElement("div", {
+    className: "body"
+  }, props.body)), /*#__PURE__*/React.createElement("div", {
+    className: "video-col"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "video"
+  }, /*#__PURE__*/React.createElement("video", {
+    src: props.video,
+    autoPlay: true,
+    muted: true,
+    loop: true
+  })))));
+});
+
+var VideoHeroA = (function (props) {
+  var className = props.className ? props.className : '';
+  className += props.reversed ? ' reversed' : '';
+  return /*#__PURE__*/React.createElement("div", {
+    className: "VideoHeroA " + className
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrapper"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "video-col"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "video"
+  }, /*#__PURE__*/React.createElement("video", {
+    src: "/video2.mp4",
+    autoPlay: true,
+    muted: true,
+    loop: true
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "overlay"
+  }, /*#__PURE__*/React.createElement(reactBootstrap.Container, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_default$5, {
+    type: "huge"
+  }, "Mojo for Adobe XD"), /*#__PURE__*/React.createElement(Text, null, "Now available")))))));
 });
 
 console.log("[ TsTheme v" + version + " ]");
@@ -567,7 +619,9 @@ exports.Section = _default$4;
 exports.SlotDemo = SlotDemo;
 exports.Spacer = _default$3;
 exports.Text = Text;
+exports.TextVideo = TextVideo;
 exports.Version = Version;
 exports.Video = Video;
+exports.VideoHeroA = VideoHeroA;
 exports.YouTube = YouTube;
 //# sourceMappingURL=index.js.map

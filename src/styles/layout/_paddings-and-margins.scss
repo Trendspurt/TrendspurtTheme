@@ -1,0 +1,53 @@
+$padding-xxl: 160px;
+$padding-xl: 90px;
+$padding-l: 60px;
+$padding-m: 32px;
+$padding-s: 24px;
+$padding-xs: 12px;
+$padding-xxs: 6px;
+$padding-none: 0px;
+
+$margin-xxl: 160px;
+$margin-xl: 90px;
+$margin-l: 60px;
+$margin-m: 32px;
+$margin-s: 24px;
+$margin-xs: 12px;
+$margin-xxs: 6px;
+$margin-none: 0px;
+
+.padding-top-xxl { padding-top: $padding-xxl !important; }
+.padding-top-xl  { padding-top: $padding-xl  !important; }
+.padding-top-l   { padding-top: $padding-l  !important; }
+.padding-top-md  { padding-top: $padding-m  !important; }
+.padding-top-sm  { padding-top: $padding-s  !important; }
+.padding-top-xs  { padding-top: $padding-xs  !important; }
+.padding-top-xxs { padding-top: $padding-xxs  !important; }
+.padding-top-none { padding-top: $padding-none  !important; }
+
+.padding-bottom-xxl { padding-bottom: $padding-xxl !important; }
+.padding-bottom-xl  { padding-bottom: $padding-xl  !important; }
+.padding-bottom-l   { padding-bottom: $padding-l  !important; }
+.padding-bottom-md  { padding-bottom: $padding-m  !important; }
+.padding-bottom-sm  { padding-bottom: $padding-s  !important; }
+.padding-bottom-xs  { padding-bottom: $padding-xs  !important; }
+.padding-bottom-xxs { padding-bottom: $padding-xxs  !important; }
+.padding-bottom-none { padding-bottom: $padding-none  !important; }
+
+.margin-top-xxl { margin-top: $margin-xxl  !important; }
+.margin-top-xl  { margin-top: $margin-xl  !important; }
+.margin-top-l   { margin-top: $margin-l  !important; }
+.margin-top-md  { margin-top: $margin-m  !important; }
+.margin-top-sm  { margin-top: $margin-s  !important; }
+.margin-top-xs  { margin-top: $margin-xs  !important; }
+.margin-top-xxs { margin-top: $margin-xxs  !important; }
+.margin-top-none { margin-top: $margin-none  !important; }
+
+.margin-bottom-xxl { margin-bottom: $margin-xxl  !important; }
+.margin-bottom-xl  { margin-bottom: $margin-xl  !important; }
+.margin-bottom-l   { margin-bottom: $margin-l  !important; }
+.margin-bottom-md  { margin-bottom: $margin-m  !important; }
+.margin-bottom-sm  { margin-bottom: $margin-s  !important; }
+.margin-bottom-xs  { margin-bottom: $margin-xs  !important; }
+.margin-bottom-xxs { margin-bottom: $margin-xxs  !important; }
+.margin-bottom-none { margin-bottom: $margin-none  !important; }

@@ -1,0 +1,25 @@
+{
+  "name": "custom",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "---": "",
+    "dev--with-backdoor-theme-update": "cp -r /Data/Repos/Trendspurt/TrendspurtTheme/dist ./node_modules/@trendspurt/trendspurt-theme && next",
+    "dev--update-theme-update": "npm update @trendspurt/trendspurt-theme && next"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^1.6.16",
+    "@next/mdx": "^9.5.3",
+    "gray-matter": "^4.0.2",
+    "mongodb": "^3.6.2",
+    "next": "^9.3.4",
+    "next-auth": "^3.1.0",
+    "react-markdown": "^4.3.1",
+    "sass": "^1.26.11"
+  },
+  "devDependencies": {}
+}

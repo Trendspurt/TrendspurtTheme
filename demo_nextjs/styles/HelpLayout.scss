@@ -1,0 +1,17 @@
+.HelpLayout {
+  code {
+    background-color: #EEE !important;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  pre {
+    background-color: #EEE !important;
+    padding: 14px 14px;
+    border-radius: 4px;
+    code {
+      color: #666;
+      padding: 0;
+    }
+  }
+}

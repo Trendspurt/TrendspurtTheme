@@ -13,7 +13,8 @@
   "scripts": {
     "// Main ---": "--------",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    "styles:watch": "node-sass src/styles/style.scss -rwo dist",
+    "//styles:watch": "node-sass src/styles/style.scss -rwo dist",
+    "styles:watch": "node-sass src/styles/style.scss -wo dist",
     "styles:watch:demo": "node-sass src/styles/style.scss -rwo demo/src",
     "release": "npm version patch; npm publish",
     "// Legacy ---": "--------",

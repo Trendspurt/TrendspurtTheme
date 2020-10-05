@@ -1,0 +1,32 @@
+.ShowroomDetailLayout {
+  &.dark {
+    background-color: #16171b;
+    color: white;
+  }
+  
+  main {
+    position: relative;
+  }
+
+  .showroom--overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    a {
+      color: white;
+      background-color: #16171b;
+      padding: 4px 10px;
+      opacity: 0.8;
+    }
+  }
+  .created-with {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;    
+    width: 120px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/ui/images/Showroom/createdwith.png);
+  }
+}

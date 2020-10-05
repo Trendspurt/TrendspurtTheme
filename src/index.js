@@ -26,3 +26,7 @@ export {default as Claim} from './components/core/Claim'
 export {default as YouTube} from './components/core/YouTube'
 export {default as MojoEmbed} from './components/core/MojoEmbed'
 export {default as Container} from './components/core/Container'
+export {default as TextVideo} from './components/core/TextVideo'
+
+// Hero
+export {default as VideoHeroA} from './components/hero/VideoHeroA'

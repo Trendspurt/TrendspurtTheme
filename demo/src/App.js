@@ -23,6 +23,7 @@ import {
   MojoEmbed,
   ImageText,
   SlotDemo,
+  TextVideo,
 } from 'trendspurt-theme'
 // import 'trendspurt-theme/dist/index.css'
 
@@ -52,6 +53,10 @@ const App = () => {
       <NavBar brand={{image: "demo/images/brand_mojo.svg"}}
               items={navItems}></NavBar>
 
+      <br/>
+      <br/>
+      <br/>
+
       {/* <HeroBase title="Mojo for Adobe XD"
              background="demo/images/HeroA_bg.jpg"
              backdrop1="demo/images/HeroA_backdrop.png">
@@ -59,7 +64,7 @@ const App = () => {
         <Button>Download Now</Button>
       </HeroBase> */}
 
-
+      <TextVideo></TextVideo>
 
       <Container>
         <div style={{backgroundColor: 'gold'}}>

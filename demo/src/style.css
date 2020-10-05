@@ -7513,3 +7513,49 @@ body {
   font-family: 'Bitter', serif;
   font-weight: 400;
   opacity: 0.5; }
+
+.TextVideo {
+  text-align: left; }
+  .TextVideo .wrapper {
+    display: flex; }
+    .TextVideo .wrapper .text-col {
+      flex: 1 1 40%;
+      background-color: #282C31;
+      color: white;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      .TextVideo .wrapper .text-col .meta {
+        font-size: 16px; }
+      .TextVideo .wrapper .text-col .title {
+        font-size: 38px;
+        line-height: 36px;
+        font-weight: 900; }
+      .TextVideo .wrapper .text-col .subtitle {
+        font-size: 16px; }
+      .TextVideo .wrapper .text-col .body {
+        font-size: 16px; }
+        .TextVideo .wrapper .text-col .body ul {
+          padding-left: 18px; }
+          .TextVideo .wrapper .text-col .body ul li {
+            margin-bottom: 10px;
+            line-height: 20px; }
+    .TextVideo .wrapper .video-col {
+      flex: 1 1 60%;
+      position: relative;
+      background-color: #282C31; }
+      .TextVideo .wrapper .video-col .video {
+        position: relative;
+        padding-top: 75%;
+        /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        background-color: #282C31; }
+        .TextVideo .wrapper .video-col .video video {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0.8; }

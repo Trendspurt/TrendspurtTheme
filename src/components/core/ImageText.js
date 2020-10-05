@@ -7,7 +7,7 @@ const LOG = '[ ImageText ]';
 
 export default (props) => {
   let className = props.className ? props.className : '';
-  className += (props.reversed) ? 'reversed' : '';
+  className += (props.reversed) ? ' reversed' : '';
   const style = props.style ? props.style : {};
   Object.assign(style, {backgroundImage: `url(${props.background})`});
   const aspectRatio = props.aspectRatio ? 1/props.aspectRatio : 1/(16/9);

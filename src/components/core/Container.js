@@ -8,7 +8,7 @@ export default (props) => {
   const className = props.className ? props.className : '';
   const style = props.style ? props.style : {};
   return (
-    <div className={"container "+className} style={style}>
+    <div className={"container Container "+className} style={style}>
       {props.children}
     </div>
   )

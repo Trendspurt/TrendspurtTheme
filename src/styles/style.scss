@@ -1,8 +1,9 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+@import "theme/colors";
 @import "typo/index";
 @import "util/bootstrap_helper";
-@import "theme/index";
+@import "layout/_paddings-and-margins";
 
 @import "../components/core/Claim";
 @import "../components/core/MojoEmbed";
@@ -15,4 +16,7 @@
 @import "../components/core/NavBar";
 @import "../components/core/Footer";
 @import "../components/core/YouTube";
+@import "../components/core/TextVideo";
+@import "../components/core/Container";
 
+@import "../components/hero/VideoHeroA";
