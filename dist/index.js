@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container$1 = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.21";
+var version = "1.3.22";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
