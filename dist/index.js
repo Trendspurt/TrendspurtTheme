@@ -7,7 +7,7 @@ var reactBootstrap = require('react-bootstrap');
 var Container$1 = _interopDefault(require('react-bootstrap/Container'));
 require('react-bootstrap/Button');
 
-var version = "1.3.22";
+var version = "1.3.23";
 
 var Version = (function () {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
@@ -572,7 +572,7 @@ var TextVideo = (function (props) {
     autoPlay: true,
     muted: true,
     loop: true,
-    playsinline: "true"
+    playsInline: "true"
   })))));
 });
 

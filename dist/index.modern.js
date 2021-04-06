@@ -5,28 +5,18 @@ import { Navbar, Container as Container$1, Nav, Form, Row, Col } from 'react-boo
 import Container$2 from 'react-bootstrap/Container';
 import 'react-bootstrap/Button';
 
-var version = "1.3.22";
+var version = "1.3.23";
 
-var Version = (function () {
+var Version = (() => {
   return /*#__PURE__*/React.createElement("div", null, "Version: ", version);
 });
 
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-var _default = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    return _React$Component.call(this, props) || this;
+class Image extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("figure", {
       className: "ts-Image"
     }, /*#__PURE__*/React.createElement("img", {
@@ -34,12 +24,11 @@ var _default = /*#__PURE__*/function (_React$Component) {
     }), /*#__PURE__*/React.createElement("figcaption", null, this.props.children), this.props.source && /*#__PURE__*/React.createElement("figcaption", {
       className: "source"
     }, "(source: ", this.props.source, ")"));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var CTA = (function (props) {
+var CTA = (props => {
   return /*#__PURE__*/React.createElement("div", null, props.children);
 });
 
@@ -82,8 +71,8 @@ function IFrame(props) {
     style: {
       height: props.height,
       boxSizing: 'content-box',
-      border: "" + (props.border ? props.border : 'none'),
-      boxShadow: "" + (props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0')
+      border: `${props.border ? props.border : 'none'}`,
+      boxShadow: `${props.boxShadow ? props.boxShadow : '0px 0px 22px #E0E0E0'}`
     }
   }), /*#__PURE__*/React.createElement("p", {
     className: "caption"
@@ -96,7 +85,7 @@ function Code(props) {
   }
 
   function format(input) {
-    var output = htmlEntities(input).replace(/##/g, '<strong>').replace(/#\/#/g, '</strong>');
+    let output = htmlEntities(input).replace(/##/g, '<strong>').replace(/#\/#/g, '</strong>');
     return output;
   }
 
@@ -118,56 +107,47 @@ function Code(props) {
   })));
 }
 
-var _default$1 = /*#__PURE__*/function () {
-  function _default() {}
-
-  _default.getSlot = function getSlot(props, id) {
+class Helper {
+  static getSlot(props, id) {
     if (props.children instanceof Array) {
-      var child = props.children.find(function (item) {
-        return item.type === id;
-      });
+      let child = props.children.find(item => item.type === id);
       return child ? child.props.children : null;
     }
 
     return;
-  };
+  }
 
-  _default.getSlots = function getSlots(props, slots) {
+  static getSlots(props, slots) {
     if (!(props.children instanceof Array)) return props;
-    var result = {};
-    slots.forEach(function (id) {
-      var child = props.children.find(function (item) {
-        return item.type === id;
-      });
+    const result = {};
+    slots.forEach(id => {
+      let child = props.children.find(item => item.type === id);
       result[id] = child ? child.props.children : props[id];
     });
     return result;
-  };
+  }
 
-  _default.childrenWithoutSlots = function childrenWithoutSlots(props, slots) {
+  static childrenWithoutSlots(props, slots) {
     if (!(props.children instanceof Array)) return props.children;
-    var children = React.Children.toArray(props.children);
-    slots.forEach(function (id) {
-      var child = children.find(function (item) {
-        return item.type === id;
-      });
+    let children = React.Children.toArray(props.children);
+    slots.forEach(id => {
+      let child = children.find(item => item.type === id);
       child && children.splice(children.indexOf(child), 1);
     });
     return children;
-  };
+  }
 
-  return _default;
-}();
-
-function SlotDemo(props) {
-  var slotNames = ['xxx'];
-  var slots = _default$1.getSlots(props, slotNames);
-  return /*#__PURE__*/React.createElement("div", null, _default$1.childrenWithoutSlots(props, slotNames), /*#__PURE__*/React.createElement("hr", null), slots.xxx);
 }
 
-var Button = (function (props) {
-  var className = props.className ? props.className : '';
-  var style = props.style ? props.style : {};
+function SlotDemo(props) {
+  const slotNames = ['xxx'];
+  const slots = Helper.getSlots(props, slotNames);
+  return /*#__PURE__*/React.createElement("div", null, Helper.childrenWithoutSlots(props, slotNames), /*#__PURE__*/React.createElement("hr", null), slots.xxx);
+}
+
+var Button = (props => {
+  const className = props.className ? props.className : '';
+  const style = props.style ? props.style : {};
   return /*#__PURE__*/React.createElement("div", {
     className: "Button " + className,
     style: style
@@ -180,27 +160,20 @@ var Button = (function (props) {
   })));
 });
 
-var _default$2 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.tag = props.tag ? props.tag : 'h2';
-    _this.style = props.style ? props.style : {};
-    _this.brand = {
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.tag = props.tag ? props.tag : 'h2';
+    this.style = props.style ? props.style : {};
+    this.brand = {
       image: '',
       width: '120px',
       height: '40px'
     };
-    Object.assign(_this.brand, props.brand);
-    return _this;
+    Object.assign(this.brand, props.brand);
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement(Navbar, {
       className: "NavBar",
       style: this.style,
@@ -213,7 +186,7 @@ var _default$2 = /*#__PURE__*/function (_React$Component) {
       style: {
         width: this.brand.width,
         height: this.brand.height,
-        backgroundImage: "url(" + this.brand.image + ")"
+        backgroundImage: `url(${this.brand.image})`
       }
     }), /*#__PURE__*/React.createElement(Navbar.Toggle, {
       "aria-controls": "basic-navbar-nav"
@@ -224,125 +197,106 @@ var _default$2 = /*#__PURE__*/function (_React$Component) {
     }, this.props.items), /*#__PURE__*/React.createElement(Form, {
       inline: true
     }))));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var Footer = (function (props) {
-  var className = props.className ? props.className : '';
-  var style = props.style ? props.style : {};
+var Footer = (props => {
+  const className = props.className ? props.className : '';
+  const style = props.style ? props.style : {};
   return /*#__PURE__*/React.createElement("div", {
     className: "Footer " + className,
     style: style
   }, props.children);
 });
 
-var _default$3 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    return _React$Component.call(this, props) || this;
+class Spacer extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("div", {
       className: "Spacer",
       style: {
         height: (this.props.height ? this.props.height : 40) + 'px'
       }
     });
-  };
-
-  return _default;
-}(React.Component);
-
-var _default$4 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    return _React$Component.call(this, props) || this;
   }
 
-  var _proto = _default.prototype;
+}
 
-  _proto.render = function render() {
+class Section extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
     return /*#__PURE__*/React.createElement("section", {
       className: "Section"
     }, /*#__PURE__*/React.createElement(Container$2, null, this.props.children));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var _default$5 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.slotNames = ['meta', 'sub'];
-    _this.slots = _default$1.getSlots(_this.props, _this.slotNames);
-    _this.className = '';
+class Headline extends React.Component {
+  constructor(props) {
+    super(props);
+    this.slotNames = ['meta', 'sub'];
+    this.slots = Helper.getSlots(this.props, this.slotNames);
+    this.className = '';
 
     switch (props.type) {
       case 'huge':
-        _this.tag = 'h1';
-        _this.className = 'huge';
+        this.tag = 'h1';
+        this.className = 'huge';
         break;
 
       case 'h1':
       case 'h2':
       case 'h3':
       case 'h4':
-        _this.tag = props.type;
+        this.tag = props.type;
         break;
 
       default:
-        _this.tag = 'h2';
+        this.tag = 'h2';
     }
 
-    _this.className = props.className ? _this.className + ' ' + props.className : _this.className;
-    _this.style = props.style ? props.style : {};
-    return _this;
+    this.className = props.className ? this.className + ' ' + props.className : this.className;
+    this.style = props.style ? props.style : {};
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement("div", {
       className: "Headline " + this.className,
       style: this.style
     }, this.props.uid, this.slots.meta ? /*#__PURE__*/React.createElement("div", {
       className: "metaTitle"
-    }, this.slots.meta) : '', /*#__PURE__*/React.createElement(this.tag, null, _default$1.childrenWithoutSlots(this.props, this.slotNames)), this.slots.sub ? /*#__PURE__*/React.createElement("div", {
+    }, this.slots.meta) : '', /*#__PURE__*/React.createElement(this.tag, null, Helper.childrenWithoutSlots(this.props, this.slotNames)), this.slots.sub ? /*#__PURE__*/React.createElement("div", {
       className: "subTitle"
     }, this.slots.sub) : '');
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var Text = (function (props) {
-  var className = props.className ? props.className : '';
-  var style = props.style ? props.style : {};
+var Text = (props => {
+  const className = props.className ? props.className : '';
+  const style = props.style ? props.style : {};
   return /*#__PURE__*/React.createElement("div", {
     className: "Text " + className,
     style: style
   }, props.children);
 });
 
-var ImageText = (function (props) {
-  var className = props.className ? props.className : '';
+var ImageText = (props => {
+  let className = props.className ? props.className : '';
   className += props.reversed ? ' reversed' : '';
-  var style = props.style ? props.style : {};
+  const style = props.style ? props.style : {};
   Object.assign(style, {
-    backgroundImage: "url(" + props.background + ")"
+    backgroundImage: `url(${props.background})`
   });
-  var aspectRatio = props.aspectRatio ? 1 / props.aspectRatio : 1 / (16 / 9);
+  const aspectRatio = props.aspectRatio ? 1 / props.aspectRatio : 1 / (16 / 9);
   return /*#__PURE__*/React.createElement("section", {
     className: "ImageText " + className,
     style: style
@@ -358,12 +312,12 @@ var ImageText = (function (props) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "frameWrapper",
     style: {
-      paddingTop: aspectRatio * 100 + "%"
+      paddingTop: aspectRatio * 100 + `%`
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "image",
     style: {
-      backgroundImage: "url(" + _default$1.getSlot(props, 'image') + ")"
+      backgroundImage: `url(${Helper.getSlot(props, 'image')})`
     }
   }))), /*#__PURE__*/React.createElement(Col, {
     lg: props.reversed ? {
@@ -376,31 +330,24 @@ var ImageText = (function (props) {
     className: "secondCol"
   }, /*#__PURE__*/React.createElement("h2", {
     className: "font-h2"
-  }, _default$1.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, _default$1.getSlot(props, 'body')), /*#__PURE__*/React.createElement("div", null, _default$1.getSlot(props, 'murx'))))));
+  }, Helper.getSlot(props, 'title')), /*#__PURE__*/React.createElement("div", null, Helper.getSlot(props, 'body')), /*#__PURE__*/React.createElement("div", null, Helper.getSlot(props, 'murx'))))));
 });
 
-var _default$6 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.className = props.className ? props.className : '';
-    _this.style = props.style ? props.style : {};
-    _this.tag = props.tag ? props.tag : 'h2';
-    Object.assign(_this.style, {
-      backgroundImage: "url(" + _this.props.background + ")"
+class HeroBase extends React.Component {
+  constructor(props) {
+    super(props);
+    this.className = props.className ? props.className : '';
+    this.style = props.style ? props.style : {};
+    this.tag = props.tag ? props.tag : 'h2';
+    Object.assign(this.style, {
+      backgroundImage: `url(${this.props.background})`
     });
-    _this.backdrop1Style = props.backdrop1 ? {
-      backgroundImage: "url(" + _this.props.backdrop1 + ")"
+    this.backdrop1Style = props.backdrop1 ? {
+      backgroundImage: `url(${this.props.backdrop1})`
     } : {};
-    return _this;
   }
 
-  var _proto = _default.prototype;
-
-  _proto.render = function render() {
+  render() {
     return /*#__PURE__*/React.createElement(Container$1, {
       fluid: true,
       className: "HeroBase " + this.className,
@@ -414,29 +361,21 @@ var _default$6 = /*#__PURE__*/function (_React$Component) {
         span: 12
       }
     }, this.props.children))));
-  };
-
-  return _default;
-}(React.Component);
-
-var _default$7 = /*#__PURE__*/function (_React$Component) {
-  _inheritsLoose(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.tag = props.tag ? props.tag : 'h2';
-    _this.style = props.style ? props.style : {};
-    Object.assign(_this.style, {
-      backgroundImage: "url(" + _this.props.background + ")"
-    });
-    return _this;
   }
 
-  var _proto = _default.prototype;
+}
 
-  _proto.render = function render() {
+class HeroA extends React.Component {
+  constructor(props) {
+    super(props);
+    this.tag = props.tag ? props.tag : 'h2';
+    this.style = props.style ? props.style : {};
+    Object.assign(this.style, {
+      backgroundImage: `url(${this.props.background})`
+    });
+  }
+
+  render() {
     return /*#__PURE__*/React.createElement(Container$2, {
       fluid: true,
       className: "HeroA",
@@ -460,17 +399,16 @@ var _default$7 = /*#__PURE__*/function (_React$Component) {
         span: 2
       }
     })));
-  };
+  }
 
-  return _default;
-}(React.Component);
+}
 
-var Claim = (function (props) {
-  var className = props.className ? props.className : '';
+var Claim = (props => {
+  let className = props.className ? props.className : '';
   className += props.inverted ? 'inverted' : '';
-  var style = props.style ? props.style : {};
+  const style = props.style ? props.style : {};
   Object.assign(style, {
-    backgroundImage: "url(" + props.background + ")"
+    backgroundImage: `url(${props.background})`
   });
   return /*#__PURE__*/React.createElement("section", {
     className: "Claim " + className,
@@ -505,13 +443,13 @@ function YouTube(props) {
   })), /*#__PURE__*/React.createElement("figcaption", null, props.title)));
 }
 
-var MojoEmbed = (function (props) {
-  var className = props.className ? props.className : '';
-  var style = props.style ? props.style : {};
+var MojoEmbed = (props => {
+  const className = props.className ? props.className : '';
+  const style = props.style ? props.style : {};
   Object.assign(style, {
-    backgroundImage: "url(" + props.background + ")"
+    backgroundImage: `url(${props.background})`
   });
-  var aspectRatio = props.aspectRatio ? 1 / props.aspectRatio : 1 / (16 / 9);
+  const aspectRatio = props.aspectRatio ? 1 / props.aspectRatio : 1 / (16 / 9);
   return /*#__PURE__*/React.createElement("section", {
     className: "MojoEmbed " + className,
     style: style
@@ -523,7 +461,7 @@ var MojoEmbed = (function (props) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "frameWrapper",
     style: {
-      paddingTop: aspectRatio * 100 + "%"
+      paddingTop: aspectRatio * 100 + `%`
     }
   }, /*#__PURE__*/React.createElement("iframe", {
     width: "100%",
@@ -535,17 +473,17 @@ var MojoEmbed = (function (props) {
   }))))));
 });
 
-var Container = (function (props) {
-  var className = props.className ? props.className : '';
-  var style = props.style ? props.style : {};
+var Container = (props => {
+  const className = props.className ? props.className : '';
+  const style = props.style ? props.style : {};
   return /*#__PURE__*/React.createElement("div", {
     className: "container Container " + className,
     style: style
   }, props.children);
 });
 
-var TextVideo = (function (props) {
-  var className = props.className ? props.className : '';
+var TextVideo = (props => {
+  let className = props.className ? props.className : '';
   className += props.reversed ? ' reversed' : '';
   return /*#__PURE__*/React.createElement("div", {
     className: "TextVideo " + className
@@ -570,12 +508,12 @@ var TextVideo = (function (props) {
     autoPlay: true,
     muted: true,
     loop: true,
-    playsinline: "true"
+    playsInline: "true"
   })))));
 });
 
-var VideoHeroA = (function (props) {
-  var className = props.className ? props.className : '';
+var VideoHeroA = (props => {
+  let className = props.className ? props.className : '';
   className += props.reversed ? ' reversed' : '';
   return /*#__PURE__*/React.createElement("div", {
     className: "VideoHeroA " + className
@@ -592,12 +530,12 @@ var VideoHeroA = (function (props) {
     loop: true
   })), /*#__PURE__*/React.createElement("div", {
     className: "overlay"
-  }, /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_default$5, {
+  }, /*#__PURE__*/React.createElement(Container$1, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Headline, {
     type: "huge"
   }, "Mojo for Adobe XD"), /*#__PURE__*/React.createElement(Text, null, "Now available")))))));
 });
 
-console.log("[ TsTheme v" + version + " ]");
+console.log(`[ TsTheme v${version} ]`);
 
-export { Button, CTA, Claim, Code, Container, Download, Footer, _default$5 as Headline, _default$7 as HeroA, _default$6 as HeroBase, IFrame, _default as Image, ImageText, MojoEmbed, _default$2 as NavBar, _default$4 as Section, SlotDemo, _default$3 as Spacer, Text, TextVideo, Version, Video, VideoHeroA, YouTube };
+export { Button, CTA, Claim, Code, Container, Download, Footer, Headline, HeroA, HeroBase, IFrame, Image, ImageText, MojoEmbed, NavBar, Section, SlotDemo, Spacer, Text, TextVideo, Version, Video, VideoHeroA, YouTube };
 //# sourceMappingURL=index.modern.js.map
