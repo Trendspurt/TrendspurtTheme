@@ -571,7 +571,8 @@ var TextVideo = (function (props) {
     src: props.video,
     autoPlay: true,
     muted: true,
-    loop: true
+    loop: true,
+    playsinline: "true"
   })))));
 });
 

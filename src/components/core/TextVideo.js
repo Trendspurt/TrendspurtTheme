@@ -20,7 +20,7 @@ export default (props) => {
         {/* <!-- Video Col --> */}
         <div className="video-col">
           <div className="video">
-            <video src={props.video} autoPlay={true} muted={true} loop={true}></video>
+            <video src={props.video} autoPlay={true} muted={true} loop={true} playsinline="true"></video>
           </div>
         </div>
       </div>
